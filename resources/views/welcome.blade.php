@@ -570,7 +570,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Team Section ======= -->
+    <!-- ======= Team Section =======
     <section id="team" class="team section-bg">
       <div class="container">
 
@@ -658,7 +658,7 @@
       </div>
     </section><!-- End Team Section -->
 
-    <!-- ======= Pricing Section ======= -->
+    <!-- ======= Pricing Section =======
     <section id="pricing" class="pricing">
       <div class="container">
 
@@ -725,8 +725,8 @@
       </div>
     </section><!-- End Pricing Section -->
 
-    <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq">
+    <!--<!-- ======= F.A.Q Section ======= -->
+    {{-- <section id="faq" class="faq">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -794,7 +794,7 @@
         </div><!-- End F.A.Q Item-->
 
       </div>
-    </section><!-- End F.A.Q Section -->
+    </section><!-- End F.A.Q Section --> --}}
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
