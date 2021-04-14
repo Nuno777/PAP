@@ -16,12 +16,6 @@
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
-
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
-
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->
@@ -33,7 +27,7 @@
         <a href="/" class="nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link">Contacto</a>
       </li>
     </ul>
 
@@ -218,21 +212,21 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                        <i class="fas fa-plus-circle nav-icon"></i>
-                        <p>Nova Foto</p>
+                        <a href="" class="nav-link">
+                            <i class="fas fa-plus-circle nav-icon"></i>
+                            <p>Nova Foto</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Editar Foto</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                        <i class="fas fa-edit nav-icon"></i>
-                        <p>Editar Foto</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                        <i class="fas fa-list nav-icon"></i>
-                        <p>Listar Fotos</p>
+                            <i class="fas fa-list nav-icon"></i>
+                            <p>Listar Fotos</p>
                         </a>
                     </li>
                 </li>
@@ -248,8 +242,8 @@
                     <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                        <i class="fas fa-edit nav-icon"></i>
-                        <p>Editar Sobre</p>
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Editar Sobre</p>
                         </a>
                     </li>
                 </li>
@@ -265,20 +259,20 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                            <i class="fas fa-plus-circle nav-icon"></i>
-                            <p>Novo Produto</p>
+                                <i class="fas fa-plus-circle nav-icon"></i>
+                                <p>Novo Produto</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                            <i class="fas fa-edit nav-icon"></i>
-                            <p>Editar Loja</p>
+                                <i class="fas fa-edit nav-icon"></i>
+                                <p>Editar Loja</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                            <i class="fas fa-list nav-icon"></i>
-                            <p>Gerir Loja</p>
+                                <i class="fas fa-list nav-icon"></i>
+                                <p>Gerir Loja</p>
                         </a>
                     </li>
                 </li>
@@ -294,14 +288,14 @@
                     <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                        <i class="fas fa-file nav-icon"></i>
-                        <p>Nova Notícia</p>
+                            <i class="fas fa-file nav-icon"></i>
+                            <p>Nova Notícia</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                        <i class="fas fa-list nav-icon"></i>
-                        <p>Gerir Notícias</p>
+                            <i class="fas fa-list nav-icon"></i>
+                            <p>Gerir Notícias</p>
                         </a>
                     </li>
                 </li>
