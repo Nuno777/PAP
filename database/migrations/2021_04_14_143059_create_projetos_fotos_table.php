@@ -15,7 +15,16 @@ class CreateProjetosFotosTable extends Migration
     {
         Schema::create('projetos_fotos', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo');
+            $table->string('descricao');
+            $table->string('localizacao');
+            $table->date('data');
             $table->timestamps();
+
+            $table->foreign('projetosfotos_id')
+                ->references('id')
+                ->on('projetosfotos')
+                ->onDelete('cascade');
         });
     }
 

@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('home')
 
 @section('content')
    <!-- Content Header (Page header) -->
@@ -6,12 +6,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>General Form</h1>
+          <h1>Adicionar Fotos a Galeria</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">General Form</li>
+            <li class="breadcrumb-item"><a href="/home">Home</a></li>
+            <li class="breadcrumb-item active">Inicio</li>
           </ol>
         </div>
       </div>
@@ -27,41 +27,46 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Quick Example</h3>
+              <h3 class="card-title">Nova Foto</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form role="form" method="POST" action="/ProjetosFotos" enctype="multipart/form-data">
+                @csrf
               <div class="card-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="inputTitulo">Titulo da Foto</label>
+                  <input type="text" class="form-control" id="inputTitulo" name="inputTitulo" placeholder="Insira um titulo" required>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="inputDesc">Descrição da Foto</label>
+                  <input type="text" class="form-control" id="inputDesc" name="inputDesc" placeholder="Insira uma descrição" required>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
+                  <label for="inputLoc">Localização da Foto</label>
+                  <input type="text" class="form-control" id="inputLoc" name="inputLoc" placeholder="Insira uma localização Ex:País/Cidade" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputData">Data da Foto</label>
+                  <input type="date" class="form-control" id="inputData" name="inputData" placeholder="Insira a data da foto" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">Fotos</label>
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      <input type="file" class="custom-file-input" id="images" name="imageFile[]" required>
+                      <label class="custom-file-label" for="images">Insira as fotos</label>
                     </div>
                     <div class="input-group-append">
-                      <span class="input-group-text">Upload</span>
+                      <span class="input-group-text">Inserir</span>
                     </div>
                   </div>
                 </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
               </div>
               <!-- /.card-body -->
-
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="btnEnviar"name="btnEnviar">Enviar</button>&nbsp;
+                <button type="reset" class="btn btn-danger" id="btnLimpar" name="btnLimpar">Limpar</button>
               </div>
             </form>
           </div>

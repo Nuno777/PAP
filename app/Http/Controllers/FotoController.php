@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProjetosFotos;
+use App\Models\Foto;
 use Illuminate\Http\Request;
 
-class ProjetosFotosController extends Controller
+class FotoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,6 @@ class ProjetosFotosController extends Controller
     public function index()
     {
         //
-        return view('ProjetosFotos.index');
     }
 
     /**
@@ -26,7 +25,6 @@ class ProjetosFotosController extends Controller
     public function create()
     {
         //
-        return view('ProjetosFotos.create');
     }
 
     /**
@@ -38,23 +36,15 @@ class ProjetosFotosController extends Controller
     public function store(Request $request)
     {
         //
-        $projetosFotos = new projetosFotos();
-        $projetosFotos->titulo = request('inputTitulo');
-        $projetosFotos->descricao = request('inputDesc');
-        $projetosFotos->localizacao = request('inputLoc');
-        $projetosFotos->data = request('inputData');
-
-        $projetosFotos->save();
-        return redirect('/ProjetosFotos');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ProjetosFotos  $projetosFotos
+     * @param  \App\Models\Foto  $foto
      * @return \Illuminate\Http\Response
      */
-    public function show(ProjetosFotos $projetosFotos)
+    public function show(Foto $foto)
     {
         //
     }
@@ -62,10 +52,10 @@ class ProjetosFotosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ProjetosFotos  $projetosFotos
+     * @param  \App\Models\Foto  $foto
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProjetosFotos $projetosFotos)
+    public function edit(Foto $foto)
     {
         //
     }
@@ -74,10 +64,10 @@ class ProjetosFotosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ProjetosFotos  $projetosFotos
+     * @param  \App\Models\Foto  $foto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProjetosFotos $projetosFotos)
+    public function update(Request $request, Foto $foto)
     {
         //
     }
@@ -85,10 +75,10 @@ class ProjetosFotosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ProjetosFotos  $projetosFotos
+     * @param  \App\Models\Foto  $foto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProjetosFotos $projetosFotos)
+    public function destroy(Foto $foto)
     {
         //
     }
