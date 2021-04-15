@@ -16,6 +16,10 @@
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
+<<<<<<< HEAD
+=======
+
+>>>>>>> v1
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->
@@ -212,9 +216,15 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a href="" class="nav-link">
                             <i class="fas fa-plus-circle nav-icon"></i>
                             <p>Nova Foto</p>
+=======
+                        <a href="{{ url('/ProjetosFotos/create') }}" class="nav-link ">
+                        <i class="fas fa-plus-circle nav-icon"></i>
+                        <p>Nova Foto</p>
+>>>>>>> v1
                         </a>
                     </li>
                     <li class="nav-item">
