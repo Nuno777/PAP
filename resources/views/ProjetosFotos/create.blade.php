@@ -23,7 +23,7 @@
     <div class="container-fluid">
       <div class="row">
         <!-- left column -->
-        <div class="col-md-6">
+        <div class="col-md-12">
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
@@ -69,7 +69,6 @@
                 <button type="reset" class="btn btn-danger" id="btnLimpar" name="btnLimpar">Limpar</button>
               </div>
             </form>
-          </div>
           <!-- /.card -->
         </div>
         <!--/.col (left) -->
