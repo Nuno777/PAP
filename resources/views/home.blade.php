@@ -69,7 +69,7 @@
                 <span class="info-box-icon bg-warning elevation-1"><i class="far fa-newspaper"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Notícias</span>
+                  <span class="info-box-text">Noticias</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>

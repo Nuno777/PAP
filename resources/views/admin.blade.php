@@ -29,7 +29,7 @@
         <a href="/" class="nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contacto</a>
+        <a href="#" class="nav-link">Galeria</a>
       </li>
     </ul>
 
@@ -172,8 +172,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/home" class="brand-link">
-      <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light"> AdminLTE3</span>
+      <img src="/dist/img/icon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-0" style="opacity: .8">
+      <span class="brand-text font-weight-light"> BOTA LUME</span>
     </a>
 
     <!-- Sidebar -->
@@ -181,7 +181,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/dist/img/user.png" class="img-circle elevation-1" alt="User Image">
         </div>
         <div class="info">
           <a class="d-block">{{ Auth::user()->name }}</a>
@@ -358,6 +358,34 @@
         $('.nav-link').removeClass('active');
         $(this).toggleClass('active');
     });
+
+    $('#btnLimpar').click(function () {
+        $$('div.imgPreview').empty();
+    });
+
+    $(function() {
+        // Multiple images preview with JavaScript
+        var multiImgPreview = function(input, imgPreviewPlaceholder) {
+
+            if (input.files) {
+                var filesAmount = input.files.length;
+
+                for (i = 0; i < filesAmount; i++) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(event) {
+                        $($.parseHTML('<img width="200" class="img-thumbnail">')).attr('src', event.target.result).appendTo(imgPreviewPlaceholder);
+                    }
+
+                    reader.readAsDataURL(input.files[i]);
+                }
+            }
+
+        };
+            $('#images').on('change', function() {
+                multiImgPreview(this, 'div.imgPreview');
+            });
+        });
 </script>
 </body>
 </html>

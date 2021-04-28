@@ -36,22 +36,45 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="inputTitulo">Titulo da Foto</label>
-                  <input type="text" class="form-control" id="inputTitulo" name="inputTitulo" placeholder="Insira um titulo" required>
+                  <input type="text" class="form-control" id="inputTitulo" name="inputTitulo" value="{{ old('inputTitulo') }}" placeholder="Insira um titulo" required>
+                  @error('inputTitulo')
+                    <p class="text-danger">
+                        {{ $errors->first('inputTitulo') }}
+                    </p>
+                  @enderror
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Descrição da Foto</label>
-                  <input type="text" class="form-control" id="inputDesc" name="inputDesc" placeholder="Insira uma descrição" required>
+                  <input type="text" class="form-control" id="inputDesc" name="inputDesc" value="{{ old('inputDesc') }}" placeholder="Insira uma descrição" required>
+                  @error('inputDesc')
+                    <p class="text-danger">
+                        {{ $errors->first('inputDesc') }}
+                    </p>
+                  @enderror
                 </div>
                 <div class="form-group">
                   <label for="inputLoc">Localização da Foto</label>
-                  <input type="text" class="form-control" id="inputLoc" name="inputLoc" placeholder="Insira uma localização Ex:País/Cidade" required>
+                  <input type="text" class="form-control" id="inputLoc" name="inputLoc" value="{{ old('inputLoc') }}" placeholder="Insira uma localização Ex:País/Cidade" required>
+                  @error('inputLoc')
+                    <p class="text-danger">
+                        {{ $errors->first('inputLoc') }}
+                    </p>
+                  @enderror
                 </div>
                 <div class="form-group">
                   <label for="inputData">Data da Foto</label>
-                  <input type="date" class="form-control" id="inputData" name="inputData" placeholder="Insira a data da foto" required>
+                  <input type="date" class="form-control" id="inputData" name="inputData" value="{{ old('inputData') }}" placeholder="Insira a data da foto" required>
+                  @error('inputData')
+                    <p class="text-danger">
+                        {{ $errors->first('inputData') }}
+                    </p>
+                  @enderror
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">Fotos</label>
+                  <label >Fotos</label>
+                    <div class="user-image mb-3 text-center">
+                        <div class="imgPreview"> </div>
+                    </div>
                   <div class="input-group">
                     <div class="custom-file">
                       <input type="file" class="custom-file-input" id="images" name="imageFile[]" required>
@@ -60,6 +83,18 @@
                     <div class="input-group-append">
                       <span class="input-group-text">Inserir</span>
                     </div>
+                    @error('imageFile')
+                        <p class="text-danger">
+                            {{ $errors->first('imageFile') }}
+                        </p>
+                    @enderror
+                    @error('imageFile.*')
+                        @foreach ($errors->all() as $error)
+                            <p class="text-danger">
+                                {{ $error }}
+                            </p>
+                        @endforeach
+                    @enderror
                   </div>
                 </div>
               </div>

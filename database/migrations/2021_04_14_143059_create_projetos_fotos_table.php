@@ -19,12 +19,8 @@ class CreateProjetosFotosTable extends Migration
             $table->string('descricao');
             $table->string('localizacao');
             $table->date('data');
+            $table->string('images')->nullable();
             $table->timestamps();
-
-            $table->foreign('projetosfotos_id')
-                ->references('id')
-                ->on('projetosfotos')
-                ->onDelete('cascade');
         });
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Foto;
 use App\Models\ProjetosFotos;
 use Illuminate\Http\Request;
 
@@ -37,14 +38,43 @@ class ProjetosFotosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validação do formulario projetosfotos
+        request()->validate([
+            'inputTitulo' => 'required',
+            'inputDesc' => 'required',
+            'inputLoc' => 'required',
+            'inputData' => 'required'
+        ]);
+
+        //Inserção de dados no formulario projetosfotos
         $projetosFotos = new projetosFotos();
         $projetosFotos->titulo = request('inputTitulo');
         $projetosFotos->descricao = request('inputDesc');
         $projetosFotos->localizacao = request('inputLoc');
         $projetosFotos->data = request('inputData');
+        $projetosFotos->images = request('imageFile');
 
         $projetosFotos->save();
+
+        $request->validate([
+            'imageFile' => 'required',
+            'imageFile.*' => 'mimes:jpeg,jpg,png,gif|max:4096'
+        ]);
+
+        if ($request->hasfile('imageFile')) {
+            foreach ($request->file('imageFile') as $file) {
+                $name = $file->getClientOriginalName();
+                $file->move(public_path() . '/uploads/', $name);
+                $imgData[] = $name;
+            }
+
+            $fileModal = new ProjetosFotos();
+            $fileModal->imageFile = json_encode($imgData);
+
+            $fileModal->save();
+
+            return back()->with('success', 'File has successfully uploaded!');
+        }
         return redirect('/ProjetosFotos');
     }
 
