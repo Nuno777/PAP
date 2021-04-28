@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProjetosFotos extends Model
 {
     use HasFactory;
-    public function foto()
-    {
-        return $this->hasMany(Foto::class);
-    }
     protected $fillable = [
-        'imageFile'
+        'titulo', 'descricao', 'localizacao', 'data', 'images'
     ];
 }

@@ -323,7 +323,7 @@
   <footer class="main-footer">
     <strong>Copyright &copy; 2021</strong> &nbsp; All rights reserved
     <div class="float-right d-none d-sm-inline-block">
-        <strong>Desenvolvimento e Design: </strong>Nuno Miguel
+        <strong>Desenvolvimento & Designed by </strong>Nuno Miguel
     </div>
   </footer>
 </div>

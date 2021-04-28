@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Foto;
 use App\Models\ProjetosFotos;
 use Illuminate\Http\Request;
 
@@ -46,15 +45,6 @@ class ProjetosFotosController extends Controller
             'inputData' => 'required'
         ]);
 
-        //Inserção de dados no formulario projetosfotos
-        $projetosFotos = new projetosFotos();
-        $projetosFotos->titulo = request('inputTitulo');
-        $projetosFotos->descricao = request('inputDesc');
-        $projetosFotos->localizacao = request('inputLoc');
-        $projetosFotos->data = request('inputData');
-        $projetosFotos->images = request('imageFile');
-
-        $projetosFotos->save();
 
         $request->validate([
             'imageFile' => 'required',
@@ -69,12 +59,21 @@ class ProjetosFotosController extends Controller
             }
 
             $fileModal = new ProjetosFotos();
-            $fileModal->imageFile = json_encode($imgData);
+            $fileModal->images = json_encode($imgData);
 
             $fileModal->save();
 
             return back()->with('success', 'File has successfully uploaded!');
         }
+
+        //Inserção de dados no formulario projetosfotos
+        $projetosFotos = new projetosFotos();
+        $projetosFotos->titulo = request('inputTitulo');
+        $projetosFotos->descricao = request('inputDesc');
+        $projetosFotos->localizacao = request('inputLoc');
+        $projetosFotos->data = request('inputData');
+        $projetosFotos->images = request('image');
+        $projetosFotos->save();
         return redirect('/ProjetosFotos');
     }
 
