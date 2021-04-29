@@ -51,11 +51,11 @@
 
       <nav class="nav-menu">
         <ul>
-          <li class="active"><a href="/"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
+          <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
           <li><a href="#about"><i class="bx bx-user"></i> <span>Sobre</span></a></li>
           <li><a href="#portfolio"><i class="bx bx-image"></i> Portfolio</a></li>
-          <li><a href="#resume"shop><i class="bx bx-shopping-bag"></i> <span>Loja</span></a></li>
-          <li><a href="#services"news><i class="bx bx-news"></i> Noticias</a></li>
+          <li><a href="#shop"><i class="bx bx-shopping-bag"></i> <span>Loja</span></a></li>
+          <li><a href="#news"><i class="bx bx-news"></i> Noticias</a></li>
           <li><a href="#contact"><i class="bx bxs-contact"></i> Contacto</a></li>
 
         </ul>

@@ -654,7 +654,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Testimonials
+# News
 --------------------------------------------------------------*/
 .testimonials .testimonial-item {
     box-sizing: content-box;
@@ -715,9 +715,7 @@ section {
     content: "";
     width: 0;
     height: 0;
-    border-top: 20px solid #fff;
-    border-right: 20px solid transparent;
-    border-left: 20px solid transparent;
+
     position: absolute;
     bottom: -20px;
     left: calc(50% - 20px);
