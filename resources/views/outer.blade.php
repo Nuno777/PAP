@@ -56,10 +56,15 @@
           <li><a href="#portfolio"><i class="bx bx-image"></i> Portfolio</a></li>
           <li><a href="#shop"><i class="bx bx-shopping-bag"></i> <span>Loja</span></a></li>
           <li><a href="#news"><i class="bx bx-news"></i> Noticias</a></li>
-          <li><a href="#contact"><i class="bx bxs-contact"></i> Contacto</a></li>
+          {{-- <li><a href="#contact"><i class="bx bxs-contact"></i> Contacto</a></li> --}}
 
         </ul>
+
       </nav><!-- .nav-menu -->
+          <div class="social-links mt-3 text-center">
+            <a href="{{ ('login') }}" class="">Login</a>
+          </div>
+
       <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
     </div>
@@ -68,7 +73,7 @@
   @yield('content')
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <!--<footer id=" footer">
     <div class="container">
       <div class="copyright">
         <strong>Copyright &copy; 2021</strong>
@@ -77,7 +82,7 @@
         Desenvolvimento & Designed by &nbsp;&nbsp;&nbsp;&nbsp;Nuno Miguel
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </footer><!-- End  Footer -->-->
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
