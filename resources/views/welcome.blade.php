@@ -290,7 +290,7 @@
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="server" class="services">
+    <section id="shop" class="services">
       <div class="container">
 
         <div class="section-title">

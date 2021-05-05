@@ -45,11 +45,19 @@ class ProjetosFotosController extends Controller
             'inputData' => 'required'
         ]);
 
-
         $request->validate([
             'imageFile' => 'required',
             'imageFile.*' => 'mimes:jpeg,jpg,png,gif|max:4096'
         ]);
+
+        //Inserção de dados no formulario projetosfotos
+        $projetosFotos = new ProjetosFotos();
+        $projetosFotos->titulo = request('inputTitulo');
+        $projetosFotos->descricao = request('inputDesc');
+        $projetosFotos->localizacao = request('inputLoc');
+        $projetosFotos->data = request('inputData');
+        $projetosFotos->images = request('image');
+        $projetosFotos->save();
 
         if ($request->hasfile('imageFile')) {
             foreach ($request->file('imageFile') as $file) {
@@ -58,22 +66,13 @@ class ProjetosFotosController extends Controller
                 $imgData[] = $name;
             }
 
-            $fileModal = new ProjetosFotos();
-            $fileModal->images = json_encode($imgData);
+            $projetosFotos->images = json_encode($imgData);
 
-            $fileModal->save();
+            $projetosFotos->save();
 
             return back()->with('success', 'File has successfully uploaded!');
         }
 
-        //Inserção de dados no formulario projetosfotos
-        $projetosFotos = new projetosFotos();
-        $projetosFotos->titulo = request('inputTitulo');
-        $projetosFotos->descricao = request('inputDesc');
-        $projetosFotos->localizacao = request('inputLoc');
-        $projetosFotos->data = request('inputData');
-        $projetosFotos->images = request('image');
-        $projetosFotos->save();
         return redirect('/ProjetosFotos');
     }
 
@@ -86,6 +85,7 @@ class ProjetosFotosController extends Controller
     public function show(ProjetosFotos $projetosFotos)
     {
         //
+        return view('ProjetosFotos.show');
     }
 
     /**
@@ -97,6 +97,7 @@ class ProjetosFotosController extends Controller
     public function edit(ProjetosFotos $projetosFotos)
     {
         //
+        return view('ProjetosFotos.edit');
     }
 
     /**

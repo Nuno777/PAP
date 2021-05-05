@@ -220,13 +220,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ url('/ProjetosFotos/edit') }}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
                             <p>Editar Foto</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ url('/ProjetosFotos/show') }}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>
                             <p>Listar Fotos</p>
                         </a>
@@ -360,7 +360,7 @@
     });
 
     $('#btnLimpar').click(function () {
-        $$('div.imgPreview').empty();
+        $('div.imgPreview').empty();
     });
 
     $(function() {

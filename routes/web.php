@@ -23,3 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->name('ProjetosFotos');
 Route::post('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::class, 'store']);
 Route::get('/ProjetosFotos/create', [App\Http\Controllers\ProjetosFotosController::class, 'create'])->name('ProjetosFotos.create');
+Route::get('/ProjetosFotos/{ProjetosFotos}/edit', [App\Http\Controllers\ProjetosFotosController::class, 'edit']);
+Route::get('/ProjetosFotos/show', [App\Http\Controllers\ProjetosFotosController::class, 'show']);

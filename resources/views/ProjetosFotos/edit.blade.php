@@ -1,4 +1,4 @@
-@extends('home')
+@extends('admin')
 
 @section('content')
    <!-- Content Header (Page header) -->
@@ -6,12 +6,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Adicionar Fotos a Galeria</h1>
+          <h1>Editar Fotos da Galeria</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
-            <li class="breadcrumb-item active">Adicionar Foto</li>
+            <li class="breadcrumb-item active">Editar Foto</li>
           </ol>
         </div>
       </div>
@@ -27,16 +27,17 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Nova Foto</h3>
+              <h3 class="card-title">Editar Foto</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="/ProjetosFotos" enctype="multipart/form-data">
+            <form role="form" method="POST" action="/ProjetosFotos/{{ $ProjetosFotos->id }}" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
               <div class="card-body">
                 <div class="form-group">
                   <label for="inputTitulo">Titulo da Foto</label>
-                  <input type="text" class="form-control" id="inputTitulo" name="inputTitulo" value="{{ old('inputTitulo') }}" placeholder="Insira um titulo" required>
+                  <input type="text" class="form-control" id="inputTitulo" name="inputTitulo" value="" placeholder="Insira um titulo" required>
                   @error('inputTitulo')
                     <p class="text-danger">
                         {{ $errors->first('inputTitulo') }}

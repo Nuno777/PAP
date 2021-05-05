@@ -24,6 +24,16 @@
     <div class="container-fluid">
       <!-- Info boxes -->
       <div class="row">
+        <div class="col-md-12">
+            @if (Session::has('message'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ Session::get('message') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+        </div>
         <div class="col-12 col-sm-6 col-md-3">
           <div class="info-box">
             <span class="info-box-icon bg-info elevation-1"><i class="far fa-image"></i></span>
