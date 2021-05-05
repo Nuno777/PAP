@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin Dashboard</title>
-
+  <link href="assets/img/user.png" rel="icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
@@ -219,12 +219,12 @@
                             <p>Nova Foto</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a href="{{ url('/ProjetosFotos/edit') }}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
                             <p>Editar Foto</p>
                         </a>
-                    </li>
+                    </li>-->
                     <li class="nav-item">
                         <a href="{{ url('/ProjetosFotos/show') }}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>

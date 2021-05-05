@@ -14,7 +14,7 @@ class ProjetosFotosController extends Controller
      */
     public function index()
     {
-        //
+        //Visualizacao do index
         return view('ProjetosFotos.index');
     }
 
@@ -25,7 +25,7 @@ class ProjetosFotosController extends Controller
      */
     public function create()
     {
-        //
+        //Criar uma nova foto para a galeria
         return view('ProjetosFotos.create');
     }
 
@@ -57,9 +57,10 @@ class ProjetosFotosController extends Controller
         $projetosFotos->localizacao = request('inputLoc');
         $projetosFotos->data = request('inputData');
         $projetosFotos->images = request('image');
-        $projetosFotos->save();
+
 
         if ($request->hasfile('imageFile')) {
+            $projetosFotos->save();
             foreach ($request->file('imageFile') as $file) {
                 $name = $file->getClientOriginalName();
                 $file->move(public_path() . '/uploads/', $name);
@@ -67,13 +68,10 @@ class ProjetosFotosController extends Controller
             }
 
             $projetosFotos->images = json_encode($imgData);
-
             $projetosFotos->save();
-
-            return back()->with('success', 'File has successfully uploaded!');
         }
 
-        return redirect('/ProjetosFotos');
+        return redirect('/ProjetosFotos')->with('message', 'Nova foto inserida com sucesso!!');
     }
 
     /**
@@ -84,8 +82,9 @@ class ProjetosFotosController extends Controller
      */
     public function show(ProjetosFotos $projetosFotos)
     {
-        //
-        return view('ProjetosFotos.show');
+        //Listagem dos projetosFotos
+        $projetosFotos = ProjetosFotos::all(); //select * from projetosFotos;
+        return view('ProjetosFotos.show', compact('projetosFotos')); //o compact serve para passar o select
     }
 
     /**
@@ -96,8 +95,9 @@ class ProjetosFotosController extends Controller
      */
     public function edit(ProjetosFotos $projetosFotos)
     {
-        //
-        return view('ProjetosFotos.edit');
+        //Editar qualquer foto da galeria
+        $projetosFotos = ProjetosFotos::all(); //select * from projetosFotos;
+        return view('ProjetosFotos.edit', compact('projetosFotos', 'all')); //o compact serve para passar o select
     }
 
     /**

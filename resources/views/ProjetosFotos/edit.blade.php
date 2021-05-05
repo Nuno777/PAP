@@ -31,7 +31,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="/ProjetosFotos/{{ $ProjetosFotos->id }}" enctype="multipart/form-data">
+            <form role="form" method="POST" action="/ProjetosFotos/{{ $projetosFotos->id }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
               <div class="card-body">

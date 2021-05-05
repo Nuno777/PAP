@@ -54,7 +54,7 @@
                                     <th>Eliminar</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                              <tbody>
                                 @foreach ($projetos as $projeto)
                                 <tr>
                                     <td><a href="/projetos/{{ $projeto->id }}/edit">{{$projeto->designacao}}</a></td>
@@ -74,7 +74,8 @@
                                         </form>
                                     </td>
                                     @endforeach
-                                    </tfoot>
+                              </tbody>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
