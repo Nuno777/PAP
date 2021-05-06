@@ -184,7 +184,7 @@
           <img src="/dist/img/user.png" class="img-circle elevation-1" alt="User Image">
         </div>
         <div class="info">
-          <a class="d-block">{{ Auth::user()->name }}</a>
+          <a class="d-block" style="color: #c2c7d0">{{ Auth::user()->name }}</a>
         </div>
       </div>
 

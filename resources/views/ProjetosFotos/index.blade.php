@@ -37,15 +37,17 @@
       <!-- Info boxes -->
       <div class="row">
         <div class="col-12 col-sm-6 col-md-3">
-          <div class="info-box">
+          <a href="{{ url('/ProjetosFotos/show') }}">
+           <div class="info-box">
             <span class="info-box-icon bg-info elevation-1"><i class="far fa-image"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Galeria</span>
             </div>
             <!-- /.info-box-content -->
-          </div>
+           </div>
           <!-- /.info-box -->
+          </a>
         </div>
         <!-- /.col -->
         <div class="col-12 col-sm-6 col-md-3">

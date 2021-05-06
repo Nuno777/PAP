@@ -45,11 +45,6 @@ class ProjetosFotosController extends Controller
             'inputData' => 'required'
         ]);
 
-        $request->validate([
-            'imageFile' => 'required',
-            'imageFile.*' => 'mimes:jpeg,jpg,png,gif|max:4096'
-        ]);
-
         //Inserзгo de dados no formulario projetosfotos
         $projetosFotos = new ProjetosFotos();
         $projetosFotos->titulo = request('inputTitulo');
@@ -58,13 +53,26 @@ class ProjetosFotosController extends Controller
         $projetosFotos->data = request('inputData');
         $projetosFotos->images = request('image');
 
+        $projetosFotos->save();
+
+        $request->validate([
+            //'imageFile' => 'required',
+            'imageFile.*' => 'mimes:jpeg,jpg,png,gif|max:4096'
+        ]);
 
         if ($request->hasfile('imageFile')) {
-            $projetosFotos->save();
+            $i = 1;
             foreach ($request->file('imageFile') as $file) {
                 $name = $file->getClientOriginalName();
+                $extension = pathinfo($name, PATHINFO_EXTENSION); //extensao da foto
+                //remover acentos da foto
+                $name = preg_replace(array("/(б|а|г|в|д)/", "/(Б|А|Г|В|Д)/", "/(й|и|к|л)/", "/(Й|И|К|Л)/", "/(н|м|о|п)/", "/(Н|М|О|П)/", "/(у|т|х|ф|ц)/", "/(У|Т|Х|Ф|Ц)/", "/(ъ|щ|ы|ь)/", "/(Ъ|Щ|Ы|Ь)/", "/(с)/", "/(С)/"), explode(" ", "a A e E i I o O u U n N"), $projetosFotos);
+                //remover espacos da foto
+                $name = str_replace(' ', '', $projetosFotos);
+                $name = $i . "." . $extension;
                 $file->move(public_path() . '/uploads/', $name);
                 $imgData[] = $name;
+                $i++;
             }
 
             $projetosFotos->images = json_encode($imgData);
@@ -97,7 +105,7 @@ class ProjetosFotosController extends Controller
     {
         //Editar qualquer foto da galeria
         $projetosFotos = ProjetosFotos::all(); //select * from projetosFotos;
-        return view('ProjetosFotos.edit', compact('projetosFotos', 'all')); //o compact serve para passar o select
+        return view('ProjetosFotos.edit', compact('projetosFotos')); //o compact serve para passar o select
     }
 
     /**
@@ -109,7 +117,23 @@ class ProjetosFotosController extends Controller
      */
     public function update(Request $request, ProjetosFotos $projetosFotos)
     {
-        //
+        //Validaзгo do formulario projetosfotos
+        request()->validate([
+            'inputTitulo' => 'required',
+            'inputDesc' => 'required',
+            'inputLoc' => 'required',
+            'inputData' => 'required'
+        ]);
+        //Inserзгo de dados no formulario projetosfotos
+        $projetosFotos->titulo = request('inputTitulo');
+        $projetosFotos->descricao = request('inputDesc');
+        $projetosFotos->localizacao = request('inputLoc');
+        $projetosFotos->data = request('inputData');
+        $projetosFotos->images = request('image');
+
+        $projetosFotos->save();
+
+        return redirect('/ProjetosFotos')->with('message', 'Informacoes da foto alterada com sucesso!!');
     }
 
     /**
@@ -120,6 +144,9 @@ class ProjetosFotosController extends Controller
      */
     public function destroy(ProjetosFotos $projetosFotos)
     {
-        //
+        //eliminar um projeto
+        $projetosFotos->delete();
+
+        return redirect('/ProjetosFotos/show')->with('message', 'Foto eliminada com sucesso!!');
     }
 }

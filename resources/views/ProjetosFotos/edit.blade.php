@@ -31,7 +31,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="/ProjetosFotos/{{ $projetosFotos->id }}" enctype="multipart/form-data">
+            <form role="form" method="POST" action="/ProjetosFotos/" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
               <div class="card-body">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Descrição da Foto</label>
-                  <input type="text" class="form-control" id="inputDesc" name="inputDesc" value="{{ old('inputDesc') }}" placeholder="Insira uma descrição" required>
+                  <input type="text" class="form-control" id="inputDesc" name="inputDesc" value="" placeholder="Insira uma descrição" required>
                   @error('inputDesc')
                     <p class="text-danger">
                         {{ $errors->first('inputDesc') }}
@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputLoc">Localização da Foto</label>
-                  <input type="text" class="form-control" id="inputLoc" name="inputLoc" value="{{ old('inputLoc') }}" placeholder="Insira uma localização Ex:País/Cidade" required>
+                  <input type="text" class="form-control" id="inputLoc" name="inputLoc" value="" placeholder="Insira uma localização Ex:País/Cidade" required>
                   @error('inputLoc')
                     <p class="text-danger">
                         {{ $errors->first('inputLoc') }}
@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputData">Data da Foto</label>
-                  <input type="date" class="form-control" id="inputData" name="inputData" value="{{ old('inputData') }}" placeholder="Insira a data da foto" required>
+                  <input type="date" class="form-control" id="inputData" name="inputData" value="" placeholder="Insira a data da foto" required>
                   @error('inputData')
                     <p class="text-danger">
                         {{ $errors->first('inputData') }}
@@ -101,8 +101,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary" id="btnEnviar"name="btnEnviar">Enviar</button>&nbsp;
-                <button type="reset" class="btn btn-danger" id="btnLimpar" name="btnLimpar">Limpar</button>
+                <button type="submit" class="btn btn-primary" id="btnEnviar"name="btnEnviar">Editar</button>&nbsp;
+                <!--<button type="reset" class="btn btn-danger" id="btnLimpar" name="btnLimpar">Limpar</button>-->
               </div>
             </form>
           <!-- /.card -->
