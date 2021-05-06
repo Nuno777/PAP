@@ -61,7 +61,7 @@
                             <td>{{ $projetosFotos->localizacao }}</td>
                             <td class="text-center">{{ $projetosFotos->data }}</td>
                             <td class="text-center">
-                                <form role="form" action="/ProjetosFotos/{{ $projetosFotos->id }}" method="post">
+                                <form role="id" action="/ProjetosFotos/{{ $projetosFotos->id }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="link" style="background-color: transparent; border: none">

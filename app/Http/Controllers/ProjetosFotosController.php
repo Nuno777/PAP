@@ -53,8 +53,6 @@ class ProjetosFotosController extends Controller
         $projetosFotos->data = request('inputData');
         $projetosFotos->images = request('image');
 
-        $projetosFotos->save();
-
         $request->validate([
             //'imageFile' => 'required',
             'imageFile.*' => 'mimes:jpeg,jpg,png,gif|max:4096'
@@ -78,7 +76,6 @@ class ProjetosFotosController extends Controller
             $projetosFotos->images = json_encode($imgData);
             $projetosFotos->save();
         }
-
         return redirect('/ProjetosFotos')->with('message', 'Nova foto inserida com sucesso!!');
     }
 
@@ -93,6 +90,8 @@ class ProjetosFotosController extends Controller
         //Listagem dos projetosFotos
         $projetosFotos = ProjetosFotos::all(); //select * from projetosFotos;
         return view('ProjetosFotos.show', compact('projetosFotos')); //o compact serve para passar o select
+
+        return view('ProjetosFotos.portfolio');
     }
 
     /**
@@ -105,7 +104,7 @@ class ProjetosFotosController extends Controller
     {
         //Editar qualquer foto da galeria
         $projetosFotos = ProjetosFotos::all(); //select * from projetosFotos;
-        return view('ProjetosFotos.edit', compact('projetosFotos')); //o compact serve para passar o select
+        return view('ProjetosFotos.edit', compact('projetosFotos', 'projetosFotos')); //o compact serve para passar o select
     }
 
     /**
@@ -145,8 +144,7 @@ class ProjetosFotosController extends Controller
     public function destroy(ProjetosFotos $projetosFotos)
     {
         //eliminar um projeto
-        $projetosFotos->delete();
-
+        $projetosFotos->destroy($projetosFotos);
         return redirect('/ProjetosFotos/show')->with('message', 'Foto eliminada com sucesso!!');
     }
 }
