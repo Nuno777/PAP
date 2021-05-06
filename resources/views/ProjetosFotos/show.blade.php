@@ -65,7 +65,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="link" style="background-color: transparent; border: none">
-                                        <i class="fas fa-trash text-danger" data-toogle="tooltip" title="Eliminar"></i>
+                                        <i class="fas fa-trash text-danger" data-toggle="tooltip" title="Eliminar"></i>
                                     </button>
                                 </form>
                             </td>

@@ -144,7 +144,7 @@ class ProjetosFotosController extends Controller
     public function destroy(ProjetosFotos $projetosFotos)
     {
         //eliminar um projeto
-        $projetosFotos->destroy($projetosFotos);
+        $projetosFotos->delete();
         return redirect('/ProjetosFotos/show')->with('message', 'Foto eliminada com sucesso!!');
     }
 }
