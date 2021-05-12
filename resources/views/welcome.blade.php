@@ -178,10 +178,7 @@
 
         <div class="section-title">
           <h2>Portfolio</h2>
-<<<<<<< Updated upstream
           <p>Alguns trofeus que Joao Almeida ganhou no ciclismo</p>
-=======
->>>>>>> Stashed changes
         </div>
 
         <div class="row" data-aos="fade-up">

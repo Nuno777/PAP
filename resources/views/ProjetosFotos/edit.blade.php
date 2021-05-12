@@ -37,7 +37,7 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="inputTitulo">Titulo da Foto</label>
-                  <input type="text" class="form-control" id="inputTitulo" name="inputTitulo" value="" placeholder="Insira um titulo" required>
+                  <input type="text" class="form-control" id="inputTitulo" name="inputTitulo" value="{{ old('titulo') ?? $projetosFotos->titulo  }}" placeholder="Insira um titulo" required>
                   @error('inputTitulo')
                     <p class="text-danger">
                         {{ $errors->first('inputTitulo') }}
@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputDesc">Descrição da Foto</label>
-                  <input type="text" class="form-control" id="inputDesc" name="inputDesc" value="" placeholder="Insira uma descrição" required>
+                  <input type="text" class="form-control" id="inputDesc" name="inputDesc" value="{{ old('descricao') ?? $projetosFotos->descricao }}" placeholder="Insira uma descrição" required>
                   @error('inputDesc')
                     <p class="text-danger">
                         {{ $errors->first('inputDesc') }}
