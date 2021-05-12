@@ -19,7 +19,7 @@ class CreateProjetosFotosTable extends Migration
             $table->string('descricao');
             $table->string('localizacao');
             $table->date('data');
-            $table->string('images')->nullable();
+            $table->string('images');
             $table->timestamps();
         });
     }
