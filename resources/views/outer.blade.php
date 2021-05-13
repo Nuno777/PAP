@@ -6,7 +6,6 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Joao Almeida</title>
-  <meta content="" name="Joao Almeida">
   <meta content="" name="Joao Almeida,Joao,Almeida,ciclismo,ciclismo portugues, ciclismo europeu, ciclismo mundial, bicicletas">
 
   <!-- Favicons -->
@@ -50,7 +49,7 @@
 
       <nav class="nav-menu">
         <ul>
-          <!--<a href="{{ ('login') }}" class="btn-get-started scrollto">Login</a>-->
+          <a href="{{ ('login') }}" class="btn-get-started scrollto "><i class="bx bx-log-in"></i><span>Login</span></a>
           <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
           <li><a href="#about"><i class="bx bx-user"></i> <span>Sobre</span></a></li>
           <li><a href="#portfolio"><i class="bx bx-image"></i> Portfolio</a></li>

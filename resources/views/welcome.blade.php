@@ -5,7 +5,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Joao Almeida</h1>
-      <p><span class="typed" data-typed-items="BOTA LUME"></span></p>
+      <p><span class="typed" data-typed-items="BOTA LUME, #TEAM BOTA LUME"></span></p>
     </div>
   </section><!-- End Hero -->
 
