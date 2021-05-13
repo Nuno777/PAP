@@ -92,7 +92,7 @@ class ProjetosFotosController extends Controller
         return view('ProjetosFotos.edit', compact('projetosFotos')); //o compact serve para passar o select
     }
 
-    public function update(Request $request, $projectId)
+    public function update(Request $request, $projectId, $projetosFotos)
     {
         //Valida��o do formulario projetosfotos
         request()->validate([

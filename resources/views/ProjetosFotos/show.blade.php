@@ -47,22 +47,22 @@
                     <!-- Inner -->
                     <div class="carousel-inner py-4">
                         <!-- Single item -->
-                        @foreach ($projetosFotos as $project)
+                        @foreach ($projetosFotos as $projetosFotos)
                             <div class="carousel-item active">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="card">
                                             @php
-                                                $images = json_decode($project->images);
+                                                $images = json_decode($projetosFotos->images);
                                             @endphp
-                                                <img src="/uploads/{{ $images[0] }}" class="card-img-top" widht="100" height="300" />
+                                                <img src="/uploads/{{ $images[0] }}" class="card-img-top" widht="100" height="180" />
                                                 <div class="card-body text-center">
-                                                    <h4 class="card-title" >{{$project->titulo}}</h4>
+                                                    <h4>{{$projetosFotos->titulo}}</h4>
                                                     <p class="card-text">
-                                                    {{$project->descricao}}
+                                                    {{$projetosFotos->descricao}}
                                                     </p>
-                                                    <a href="#!" class="btn btn-primary pr-30">Editar</a> <a href="#!" class="btn btn-danger">Eliminar</a>
+                                                    <a href="{{ $projetosFotos->id }}/edit" class="btn btn-primary pr-30">Editar</a> <a href="" class="btn btn-danger">Eliminar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -72,7 +72,7 @@
                         @endforeach
                         <!-- Inner -->
                         </div>
-                    <!-- Carousel wrapper -->                    
+                    <!-- Carousel wrapper -->
                     </div>
           <!-- /.card -->
                 </div>

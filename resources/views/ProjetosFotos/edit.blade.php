@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputLoc">Localização da Foto</label>
-                  <input type="text" class="form-control" id="inputLoc" name="inputLoc" value="" placeholder="Insira uma localização Ex:País/Cidade" required>
+                  <input type="text" class="form-control" id="inputLoc" name="inputLoc" value="{{ old('localizacao') ?? $projetosFotos->localizacao }}" placeholder="Insira uma localização Ex:País/Cidade" required>
                   @error('inputLoc')
                     <p class="text-danger">
                         {{ $errors->first('inputLoc') }}
@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputData">Data da Foto</label>
-                  <input type="date" class="form-control" id="inputData" name="inputData" value="" placeholder="Insira a data da foto" required>
+                  <input type="date" class="form-control" id="inputData" name="inputData" value="{{ old('data') ?? $projetosFotos->data }}" placeholder="Insira a data da foto" required>
                   @error('inputData')
                     <p class="text-danger">
                         {{ $errors->first('inputData') }}
