@@ -1,4 +1,4 @@
-@extends('home')
+@extends('ProjetosFotos.home')
 
 @section('content')
    <!-- Content Header (Page header) -->
@@ -10,7 +10,7 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/home">Home</a></li>
+            <li class="breadcrumb-item"><a href="">Home</a></li>
             <li class="breadcrumb-item active">Lista das Fotos</li>
           </ol>
         </div>
@@ -42,44 +42,44 @@
               <h3 class="card-title">Lista das Fotos</h3>
             </div>
             <!-- /.card-header -->
-            <div class="card-body">
-                <table id="table" class="table table-bordered table-striped">
-                    <thead>
-                        <tr class="text-center">
-                            <th>Titulo</th>
-                            <th>Descricao</th>
-                            <th>Localizacao</th>
-                            <th>Data</th>
-                            <th>Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($projetosFotos as $projetosFotos)
-                        <tr>
-                            <td><a href="/ProjetosFotos/{{ $projetosFotos->id }}/edit">{{ $projetosFotos->titulo }}</a></td>
-                            <td>{{ $projetosFotos->descricao }}</td>
-                            <td>{{ $projetosFotos->localizacao }}</td>
-                            <td class="text-center">{{ $projetosFotos->data }}</td>
-                            <td class="text-center">
-                                <form role="id" action="/ProjetosFotos/{{ $projetosFotos->id }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="link" style="background-color: transparent; border: none">
-                                        <i class="fas fa-trash text-danger" data-toggle="tooltip" title="Eliminar"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
+            <!-- Gallery -->
+                    <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center"data-mdb-ride="carousel">
+                    <!-- Inner -->
+                    <div class="carousel-inner py-4">
+                        <!-- Single item -->
+                        @foreach ($projetosFotos as $project)
+                            <div class="carousel-item active">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="card">
+                                            @php
+                                                $images = json_decode($project->images);
+                                            @endphp
+                                                <img src="/uploads/{{ $images[0] }}" class="card-img-top" widht="100" height="300" />
+                                                <div class="card-body text-center">
+                                                    <h4 class="card-title" >{{$project->titulo}}</h4>
+                                                    <p class="card-text">
+                                                    {{$project->descricao}}
+                                                    </p>
+                                                    <a href="#!" class="btn btn-primary pr-30">Editar</a> <a href="#!" class="btn btn-danger">Eliminar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
-                    </tbody>
-                </table>
-              </div>
+                        <!-- Inner -->
+                        </div>
+                    <!-- Carousel wrapper -->                    
+                    </div>
           <!-- /.card -->
-          </div>
-        <!--/.col (left) -->
-        </div>
-      <!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </section>
+                </div>
+            <!--/.col (left) -->
+            </div>
+        <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
   <!-- /.content -->
 @endsection
