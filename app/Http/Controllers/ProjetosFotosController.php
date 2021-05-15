@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\ProjetosFotos;
 
 use Illuminate\Support\Facades\DB;
@@ -56,15 +55,14 @@ class ProjetosFotosController extends Controller
         ]);
 
         if ($request->hasfile('imageFile')) {
-            $i = 1;
+           $i=1;
             foreach ($request->file('imageFile') as $file) {
-                $name = $file->getClientOriginalName();
-                $extension = pathinfo($name, PATHINFO_EXTENSION); //extensao da foto
+                $nameOriginal =  $file->getClientOriginalName();
+                $extension = pathinfo($nameOriginal, PATHINFO_EXTENSION); //extensao da foto
                 //remover acentos da foto
-                $name = preg_replace(array("/(�|�|�|�|�)/", "/(�|�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�|�)/", "/(�|�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�)/", "/(�)/"), explode(" ", "a A e E i I o O u U n N"), $projetosFotos);
+                $nameSemACENTOS = preg_replace(array("/(�|�|�|�|�)/", "/(�|�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�|�)/", "/(�|�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�)/", "/(�)/"), explode(" ", "a A e E i I o O u U n N"), $nameOriginal);
                 //remover espacos da foto
-                $name = str_replace(' ', '', $projetosFotos);
-                $name = $i . "." . $extension;
+                $name = str_replace(' ', '', $nameSemACENTOS);
                 $file->move(public_path() . '/uploads/', $name);
                 $imgData[] = $name;
                 $i++;

@@ -10,7 +10,7 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="">Home</a></li>
+            <li class="breadcrumb-item"><a href="/home">Home</a></li>
             <li class="breadcrumb-item active">Lista das Fotos</li>
           </ol>
         </div>
@@ -33,6 +33,7 @@
                 @endif
             </div>
         </div>
+
       <div class="row">
         <!-- left column -->
         <div class="col-md-12">
@@ -43,33 +44,64 @@
             </div>
             <!-- /.card-header -->
             <!-- Gallery -->
-                    <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center"data-mdb-ride="carousel">
+            <div class="row">
+              @foreach ($projetosFotos as $projetoFoto)
+                      @php
+                        $images = json_decode($projetoFoto->images);
+                      @endphp
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                  <div class=" bg-dark rounded shadow-sm"><img src="/uploads/{{ $images[0] }}" alt="" style="height: 180px; widht:100;" class="img-fluid card-img-top">
+                    <div class="p-4" style="background-color:#3f474e">
+                      <h4> <a href="#" class="text-dark">{{$projetoFoto->titulo}}</a></h4>
+                      <p class="small text-muted mb-0"> {{$projetoFoto->descricao}}</p>
+                      <div class="card-body text-center">
+                        <a href="{{ $projetoFoto->id }}/edit" class="btn btn-primary pr-30">Editar</a> <a href="" class="btn btn-danger">Eliminar</a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+            </div>
+                    {{-- <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center"data-mdb-ride="carousel">
                     <!-- Inner -->
+
                     <div class="carousel-inner py-4">
                         <!-- Single item -->
-                        @foreach ($projetosFotos as $projetosFotos)
+
                             <div class="carousel-item active">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="card">
-                                            @php
-                                                $images = json_decode($projetosFotos->images);
-                                            @endphp
-                                                <img src="/uploads/{{ $images[0] }}" class="card-img-top" widht="100" height="180" />
-                                                <div class="card-body text-center">
-                                                    <h4>{{$projetosFotos->titulo}}</h4>
-                                                    <p class="card-text">
-                                                    {{$projetosFotos->descricao}}
-                                                    </p>
-                                                    <a href="{{ $projetosFotos->id }}/edit" class="btn btn-primary pr-30">Editar</a> <a href="" class="btn btn-danger">Eliminar</a>
-                                                </div>
+                              @foreach ($projetosFotos as $projetoFoto)
+                                    <div class="container-">
+
+
+                                        <div class="row">
+
+
+                                            <div class="col-lg-4">
+
+                                                <div class="card">
+                                                  @php
+                                                    $images = json_decode($projetoFoto->images);
+                                                  @endphp
+                                                      <img src="/uploads/{{ $images[0] }}" class="card-img-top" widht="100" height="180" />
+                                                      <div class="card-body text-center">
+                                                          <h4>{{$projetoFoto->titulo}}</h4>
+                                                          <p class="card-text">
+                                                          {{$projetoFoto->descricao}}
+                                                          </p>
+                                                          <a href="{{ $projetoFoto->id }}/edit" class="btn btn-primary pr-30">Editar</a> <a href="" class="btn btn-danger">Eliminar</a>
+                                                      </div>
+                                              </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
+
+
+                                      </div>
+                                      @endforeach
+                                  </div>
+
+
+                            </div> --}}
+
                         <!-- Inner -->
                         </div>
                     <!-- Carousel wrapper -->
