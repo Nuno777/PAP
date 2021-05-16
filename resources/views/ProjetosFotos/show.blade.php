@@ -42,21 +42,21 @@
             <div class="card-header">
               <h3 class="card-title">Lista das Fotos</h3>
             </div>
+            <br>
             <!-- /.card-header -->
             <!-- Gallery -->
             <div class="row">
               @foreach ($projetosFotos as $projetoFoto)
-                      @php
-                        $images = json_decode($projetoFoto->images);
-                      @endphp
+                @php
+                    $images = json_decode($projetoFoto->images);
+                @endphp
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                  <div class=" bg-dark rounded shadow-sm"><img src="/uploads/{{ $images[0] }}" alt="" style="height: 180px; widht:100;" class="img-fluid card-img-top">
-                    <div class="p-4" style="background-color:#3f474e">
-                      <h4> <a href="#" class="text-dark">{{$projetoFoto->titulo}}</a></h4>
-                      <p class="small text-muted mb-0"> {{$projetoFoto->descricao}}</p>
-                      <div class="card-body text-center">
-                        <a href="{{ $projetoFoto->id }}/edit" class="btn btn-primary pr-30">Editar</a> <a href="" class="btn btn-danger">Eliminar</a>
-
+                  <div class=" bg-dark rounded shadow-sm"><img src="/uploads/{{ $images[0] }}" alt="" style="height: 250px; widht: 100;" class="img-fluid card-img-top">
+                    <div class="p-4 text-center" style="background-color:#3f474e">
+                      <h4>{{$projetoFoto->titulo}}</h4>
+                      <p>{{$projetoFoto->descricao}}</p>
+                      <div class="text-center">
+                        <a href="{{ $projetoFoto->id }}/edit" class="btn btn-primary pr-30">Editar</a> &nbsp; <a href="" class="btn btn-danger">Eliminar</a>
                       </div>
                     </div>
                   </div>
@@ -68,17 +68,11 @@
 
                     <div class="carousel-inner py-4">
                         <!-- Single item -->
-
                             <div class="carousel-item active">
                               @foreach ($projetosFotos as $projetoFoto)
                                     <div class="container-">
-
-
                                         <div class="row">
-
-
                                             <div class="col-lg-4">
-
                                                 <div class="card">
                                                   @php
                                                     $images = json_decode($projetoFoto->images);
@@ -91,17 +85,12 @@
                                                           </p>
                                                           <a href="{{ $projetoFoto->id }}/edit" class="btn btn-primary pr-30">Editar</a> <a href="" class="btn btn-danger">Eliminar</a>
                                                       </div>
-                                              </div>
+                                                </div>
                                             </div>
-
-
                                       </div>
                                       @endforeach
                                   </div>
-
-
                             </div> --}}
-
                         <!-- Inner -->
                         </div>
                     <!-- Carousel wrapper -->
