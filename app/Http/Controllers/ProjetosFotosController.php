@@ -33,7 +33,7 @@ class ProjetosFotosController extends Controller
 
     public function store(Request $request)
     {
-        //Valida��o do formulario projetosfotos
+        //Validação do formulario projetosfotos
         request()->validate([
             'inputTitulo' => 'required',
             'inputDesc' => 'required',
@@ -41,7 +41,7 @@ class ProjetosFotosController extends Controller
             'inputData' => 'required'
         ]);
 
-        //Inser��o de dados no formulario projetosfotos
+        //Inserção de dados no formulario projetosfotos
         $projetosFotos = new ProjetosFotos();
         $projetosFotos->titulo = request('inputTitulo');
         $projetosFotos->descricao = request('inputDesc');
@@ -55,12 +55,12 @@ class ProjetosFotosController extends Controller
         ]);
 
         if ($request->hasfile('imageFile')) {
-           $i=1;
+            $i = 1;
             foreach ($request->file('imageFile') as $file) {
                 $nameOriginal =  $file->getClientOriginalName();
                 $extension = pathinfo($nameOriginal, PATHINFO_EXTENSION); //extensao da foto
                 //remover acentos da foto
-                $nameSemACENTOS = preg_replace(array("/(�|�|�|�|�)/", "/(�|�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�|�)/", "/(�|�|�|�|�)/", "/(�|�|�|�)/", "/(�|�|�|�)/", "/(�)/", "/(�)/"), explode(" ", "a A e E i I o O u U n N"), $nameOriginal);
+                $nameSemACENTOS = preg_replace(array("/(á|à|ã|â|ä)/", "/(Á|À|Ã|Â|Ä)/", "/(é|è|ê|ë)/", "/(É|È|Ê|Ë)/", "/(í|ì|î|ï)/", "/(Í|Ì|Î|Ï)/", "/(ó|ò|õ|ô|ö)/", "/(Ó|Ò|Õ|Ô|Ö)/", "/(ú|ù|û|ü)/", "/(Ú|Ù|Û|Ü)/", "/(ñ)/", "/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $nameOriginal);
                 //remover espacos da foto
                 $name = str_replace(' ', '', $nameSemACENTOS);
                 $file->move(public_path() . '/uploads/', $name);
@@ -92,14 +92,14 @@ class ProjetosFotosController extends Controller
 
     public function update(Request $request, $projectId, $projetosFotos)
     {
-        //Valida��o do formulario projetosfotos
+        //Validação do formulario projetosfotos
         request()->validate([
             'inputTitulo' => 'required',
             'inputDesc' => 'required',
             'inputLoc' => 'required',
             'inputData' => 'required'
         ]);
-        //Inser��o de dados no formulario projetosfotos
+        //Inserção de dados no formulario projetosfotos
         $projetosFotos->titulo = request('inputTitulo');
         $projetosFotos->descricao = request('inputDesc');
         $projetosFotos->localizacao = request('inputLoc');
