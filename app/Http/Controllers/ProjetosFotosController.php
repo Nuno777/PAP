@@ -6,6 +6,7 @@ use App\Models\ProjetosFotos;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProjetosFotosController extends Controller
 {
@@ -108,13 +109,15 @@ class ProjetosFotosController extends Controller
 
         $projetosFotos->save();
 
-        return redirect('/ProjetosFotos')->with('message', 'Informacoes da foto alterada com sucesso!!');
+        return redirect('/ProjetosFotos/show')->with('message', 'Informacoes da foto alterada com sucesso!!');
     }
 
     public function destroy($projetosFotos)
     {
         //eliminar um projeto
         ProjetosFotos::find($projetosFotos)->delete();
+        //elimina a foto da pasta
+        Storage::delete('/uploads/'.$projetosFotos);
         return redirect('/ProjetosFotos/show')->with('message', 'Foto eliminada com sucesso!!');
     }
 }

@@ -15,6 +15,20 @@
   <link rel="stylesheet" href="/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="/dist/css/adminlte.css">
 
+  <style>
+      .pic{
+          display: inline-block;
+          margin: 10px 10px 0 0;
+          position: relative;
+      }
+      .close{
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 9999;
+      }
+  </style>
+
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -60,7 +74,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/dist/img/user.png" class="img-circle elevation-1" alt="User Image">
+          <img src="/dist/img/user.png" class="" alt="User Image">
         </div>
         <div class="info">
           <a class="d-block" style="color: #c2c7d0">{{ Auth::user()->name }}</a>
@@ -265,6 +279,20 @@
                 multiImgPreview(this, 'div.imgPreview');
             });
         });
+
+        function deletefoto(images){
+            $('#'+images).remove();
+
+            $.ajax({
+                type: "delete",
+                url: "/images/",
+                data: {_token: '{{ csrf_token() }}'},
+                dataType: "json",
+                success: function (response) {
+                    console.log("ok");
+                }
+            });
+        }
 </script>
 </body>
 </html>
