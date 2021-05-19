@@ -84,7 +84,7 @@
                                     <div class="user-image mb-3 text-center">
                                         <div class="imgPreview">
                                             @foreach (json_decode($projetosFotos->images) as $images)
-                                                <span class="pic">
+                                                <span class="pic" id="{{ $loop->index }}">
                                                     <a href="javascript:void(0)"
                                                         onclick="deletefoto('{{ $images }}')">
                                                         <i class="fas fa-times close text-danger"></i>

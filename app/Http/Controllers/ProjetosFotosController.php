@@ -90,7 +90,12 @@ class ProjetosFotosController extends Controller
     {
         //Editar qualquer foto da galeria
         $projetosFotos = ProjetosFotos::find($projectId); //select * from projetosFotos;
-        return view('ProjetosFotos.edit', compact('projetosFotos')); //o compact serve para passar o select
+        if ($projectId) {
+            json_decode($projectId);
+        } else {
+            $projectId = [];
+        }
+        return view('ProjetosFotos.edit', compact('projetosFotos', 'projectId')); //o compact serve para passar o select
     }
 
     public function update(Request $request, $projectId, $projetosFotos)
