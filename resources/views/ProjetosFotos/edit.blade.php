@@ -98,7 +98,7 @@
                                     </div>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="images" name="imageFile[]">
+                                            <input type="file" class="custom-file-input" id="images" name="imageFile[]" multiple="multiple">
                                             <label class="custom-file-label" for="images">Insira as fotos</label>
                                         </div>
                                         @error('imageFile')

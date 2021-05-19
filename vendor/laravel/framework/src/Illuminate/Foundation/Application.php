@@ -33,7 +33,7 @@ class Application extends Container implements ApplicationContract, CachesConfig
      *
      * @var string
      */
-    const VERSION = '8.42.0';
+    const VERSION = '8.42.1';
 
     /**
      * The base path for the Laravel installation.
@@ -891,9 +891,9 @@ class Application extends Container implements ApplicationContract, CachesConfig
         // finished. This is useful when ordering the boot-up processes we run.
         $this->fireAppCallbacks($this->bootingCallbacks);
 
-        foreach ($this->serviceProviders as $provider) {
-            $this->bootProvider($provider);
-        }
+        array_walk($this->serviceProviders, function ($p) {
+            $this->bootProvider($p);
+        });
 
         $this->booted = true;
 
