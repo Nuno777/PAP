@@ -44,7 +44,6 @@
                             <h3 class="card-title">Lista dos Eventos</h3>
                         </div>
                         <br>
-                        <!-- /.card-header -->
                         <!-- Gallery -->
                         <div class="row">
                             @foreach ($projetosFotos as $projetoFoto)

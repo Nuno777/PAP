@@ -277,7 +277,7 @@
         });
 
         function deletefoto(images) {
-            $('#images' + images).remove();
+            $('#' + images).remove();
 
             $.ajax({
                 type: "delete",

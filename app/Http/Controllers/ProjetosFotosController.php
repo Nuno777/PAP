@@ -72,7 +72,7 @@ class ProjetosFotosController extends Controller
             $projetosFotos->images = json_encode($imgData);
             $projetosFotos->save();
         }
-        return redirect('/ProjetosFotos')->with('message', 'Nova foto inserida com sucesso!!');
+        return redirect('/ProjetosFotos')->with('message', 'Novo evento inserido com sucesso!!');
     }
 
     public function show(ProjetosFotos $projetosFotos)
@@ -109,7 +109,7 @@ class ProjetosFotosController extends Controller
 
         $projetosFotos->save();
 
-        return redirect('/ProjetosFotos/show')->with('message', 'Informacoes da foto alterada com sucesso!!');
+        return redirect('/ProjetosFotos/show')->with('message', 'Informacoes do evento alterado com sucesso!!');
     }
 
     public function destroy($projetosFotos)
@@ -117,7 +117,7 @@ class ProjetosFotosController extends Controller
         //eliminar um projeto
         ProjetosFotos::find($projetosFotos)->delete();
         //elimina a foto da pasta
-        Storage::delete('/uploads/'.$projetosFotos);
-        return redirect('/ProjetosFotos/show')->with('message', 'Foto eliminada com sucesso!!');
+        Storage::delete('/uploads/' . $projetosFotos);
+        return redirect('/ProjetosFotos/show')->with('message', 'Evento eliminada com sucesso!!');
     }
 }

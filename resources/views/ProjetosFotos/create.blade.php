@@ -84,7 +84,7 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="images" name="imageFile[]"
-                                                required>
+                                                multiple="multiple" required>
                                             <label class="custom-file-label" for="images">Insira as fotos</label>
                                         </div>
                                         @error('imageFile')
