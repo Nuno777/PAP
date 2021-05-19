@@ -60,7 +60,7 @@
                                                 <form method="POST"
                                                     action="{{ route('ProjetosFotos.delete', $projetoFoto->id) }}">
                                                     <a href="{{ $projetoFoto->id }}/edit"
-                                                        class="btn btn-primary pr-30">Editar</a>
+                                                        class="btn btn-primary pr-30">Editar</a>&nbsp;
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger">Eliminar</button>

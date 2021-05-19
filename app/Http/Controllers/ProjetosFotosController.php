@@ -59,11 +59,13 @@ class ProjetosFotosController extends Controller
             $i = 1;
             foreach ($request->file('imageFile') as $file) {
                 $nameOriginal =  $file->getClientOriginalName();
-                $extension = pathinfo($nameOriginal, PATHINFO_EXTENSION); //extensao da foto
+                //extensao da foto
+                $extension = pathinfo($nameOriginal, PATHINFO_EXTENSION);
                 //remover acentos da foto
                 $nameSemACENTOS = preg_replace(array("/(á|à|ã|â|ä)/", "/(Á|À|Ã|Â|Ä)/", "/(é|è|ê|ë)/", "/(É|È|Ê|Ë)/", "/(í|ì|î|ï)/", "/(Í|Ì|Î|Ï)/", "/(ó|ò|õ|ô|ö)/", "/(Ó|Ò|Õ|Ô|Ö)/", "/(ú|ù|û|ü)/", "/(Ú|Ù|Û|Ü)/", "/(ñ)/", "/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $nameOriginal);
                 //remover espacos da foto
                 $name = str_replace(' ', '', $nameSemACENTOS);
+                //$name = $nameSemACENTOS . $i . '.' . $extension;
                 $file->move(public_path() . '/uploads/', $name);
                 $imgData[] = $name;
                 $i++;
@@ -117,7 +119,7 @@ class ProjetosFotosController extends Controller
         //eliminar um projeto
         ProjetosFotos::find($projetosFotos)->delete();
         //elimina a foto da pasta
-        Storage::delete('/uploads/' . $projetosFotos);
+        Storage::delete('/uploads/');
         return redirect('/ProjetosFotos/show')->with('message', 'Evento eliminada com sucesso!!');
     }
 }
