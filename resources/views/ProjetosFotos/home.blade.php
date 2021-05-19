@@ -27,10 +27,10 @@
             <div class="col-12 col-sm-6 col-md-3">
              <a href="{{ url('/ProjetosFotos/show') }}">
               <div class="info-box">
-                <span class="info-box-icon bg-info elevation-1"><i class="far fa-image"></i></span>
+                <span class="info-box-icon bg-info elevation-1"><i class="far fa-calendar-alt"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Galeria</span>
+                  <span class="info-box-text">Eventos</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>

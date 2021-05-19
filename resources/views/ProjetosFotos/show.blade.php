@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Lista das Fotos da Galeria</h1>
+                    <h1>Listagem dos Eventos</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                        <li class="breadcrumb-item active">Lista das Fotos</li>
+                        <li class="breadcrumb-item active">Lista dos Eventos</li>
                     </ol>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Lista das Fotos</h3>
+                            <h3 class="card-title">Lista dos Eventos</h3>
                         </div>
                         <br>
                         <!-- /.card-header -->
@@ -58,8 +58,10 @@
                                             <h4>{{ $projetoFoto->titulo }}</h4>
                                             <p>{{ $projetoFoto->descricao }}</p>
                                             <div class="text-center">
-                                                <form method="POST" action="{{ route('ProjetosFotos.delete', $projetoFoto->id) }}">
-                                                    <a href="{{ $projetoFoto->id }}/edit" class="btn btn-primary pr-30">Editar</a>
+                                                <form method="POST"
+                                                    action="{{ route('ProjetosFotos.delete', $projetoFoto->id) }}">
+                                                    <a href="{{ $projetoFoto->id }}/edit"
+                                                        class="btn btn-primary pr-30">Editar</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger">Eliminar</button>

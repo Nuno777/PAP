@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Adicionar Fotos a Galeria</h1>
+                    <h1>Adicionar um Evento</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                        <li class="breadcrumb-item active">Adicionar Foto</li>
+                        <li class="breadcrumb-item active">Adicionar Evento</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Nova Foto</h3>
+                            <h3 class="card-title">Novo Evento</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -35,9 +35,9 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="inputTitulo">Titulo da Foto</label>
+                                    <label for="inputTitulo">Titulo do Evento</label>
                                     <input type="text" class="form-control" id="inputTitulo" name="inputTitulo"
-                                        value="{{ old('inputTitulo') }}" placeholder="Insira um titulo" required>
+                                        value="{{ old('inputTitulo') }}" placeholder="Insira o titulo do evento" required>
                                     @error('inputTitulo')
                                         <p class="text-danger">
                                             {{ $errors->first('inputTitulo') }}
@@ -45,9 +45,10 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputDesc">Descrição da Foto</label>
+                                    <label for="inputDesc">Descrição do Evento</label>
                                     <input type="text" class="form-control" id="inputDesc" name="inputDesc"
-                                        value="{{ old('inputDesc') }}" placeholder="Insira uma descrição" required>
+                                        value="{{ old('inputDesc') }}" placeholder="Insira a descrição do evento"
+                                        required>
                                     @error('inputDesc')
                                         <p class="text-danger">
                                             {{ $errors->first('inputDesc') }}
@@ -55,9 +56,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputLoc">Localização da Foto</label>
+                                    <label for="inputLoc">Localização do Evento</label>
                                     <input type="text" class="form-control" id="inputLoc" name="inputLoc"
-                                        value="{{ old('inputLoc') }}" placeholder="Insira uma localização Ex:País/Cidade"
+                                        value="{{ old('inputLoc') }}" placeholder="Insira a localização do evento"
                                         required>
                                     @error('inputLoc')
                                         <p class="text-danger">
@@ -66,9 +67,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputData">Data da Foto</label>
+                                    <label for="inputData">Data do Evento</label>
                                     <input type="date" class="form-control" id="inputData" name="inputData"
-                                        value="{{ old('inputData') }}" placeholder="Insira a data da foto" required>
+                                        value="{{ old('inputData') }}" placeholder="Insira a data do evento" required>
                                     @error('inputData')
                                         <p class="text-danger">
                                             {{ $errors->first('inputData') }}
@@ -76,7 +77,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label>Fotos</label>
+                                    <label>Fotos do Evento</label>
                                     <div class="user-image mb-3 text-center">
                                         <div class="imgPreview"> </div>
                                     </div>
@@ -85,9 +86,6 @@
                                             <input type="file" class="custom-file-input" id="images" name="imageFile[]"
                                                 required>
                                             <label class="custom-file-label" for="images">Insira as fotos</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">Inserir</span>
                                         </div>
                                         @error('imageFile')
                                             <p class="text-danger">
