@@ -85,8 +85,7 @@
                                         <div class="imgPreview">
                                             @foreach (json_decode($projetosFotos->images) as $images)
                                                 <span class="pic" id="{{ $loop->index }}">
-                                                    <a href="javascript:void(0)"
-                                                        onclick="deletefoto('{{ $images }}')">
+                                                    <a href="javascript:void(0)" onclick="deletefoto('{{ $images }}','{{ $loop->index }}')">
                                                         <i class="fas fa-times close text-danger"></i>
                                                     </a>
                                                     <img width="250" class="img-thumbnail"
@@ -98,7 +97,8 @@
                                     </div>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="images" name="imageFile[]" multiple="multiple">
+                                            <input type="file" class="custom-file-input" id="images" name="imageFile[]"
+                                                multiple="multiple">
                                             <label class="custom-file-label" for="images">Insira as fotos</label>
                                         </div>
                                         @error('imageFile')

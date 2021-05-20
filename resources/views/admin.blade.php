@@ -276,8 +276,8 @@
             });
         });
 
-        function deletefoto(images) {
-            $('#' + images).remove();
+        function deletefoto(images,projectId) {
+            $('#' + projectId).remove();
 
             $.ajax({
                 type: "delete",

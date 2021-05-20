@@ -95,7 +95,7 @@ class ProjetosFotosController extends Controller
         } else {
             $projectId = [];
         }
-        return view('ProjetosFotos.edit', compact('projetosFotos', 'projectId')); //o compact serve para passar o select
+        return view('ProjetosFotos.edit', compact('projetosFotos','projectId')); //o compact serve para passar o select
     }
 
     public function update(Request $request, $projectId, $projetosFotos)
