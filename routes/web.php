@@ -23,7 +23,8 @@ Route::post('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::cla
 Route::get('/ProjetosFotos/create', [App\Http\Controllers\ProjetosFotosController::class, 'create'])->name('ProjetosFotos.create');
 
 Route::get('/ProjetosFotos/{ProjetosFotos}/edit', [App\Http\Controllers\ProjetosFotosController::class, 'edit'])->name('ProjetosFotos.edit');
-Route::put('/ProjetosFotos/{ProjetosFotos}', [App\Http\Controllers\ProjetosFotosController::class, 'update']);
+Route::put('/ProjetosFotos/{ProjetosFotos}', [App\Http\Controllers\ProjetosFotosController::class, 'update'])->name('ProjetosFotos.update');
 
 Route::get('/ProjetosFotos/show', [App\Http\Controllers\ProjetosFotosController::class, 'show']);
 Route::delete('/ProjetosFotos/{ProjetosFotos}', [App\Http\Controllers\ProjetosFotosController::class, 'destroy'])->name('ProjetosFotos.delete');
+Route::delete('/ProjetosFotos/{images}', [App\Http\Controllers\ProjetosFotosController::class, 'destroy'])->name('ProjetosFotos.deletefoto');

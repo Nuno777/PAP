@@ -84,13 +84,14 @@
                                     <div class="user-image mb-3 text-center">
                                         <div class="imgPreview">
                                             @foreach (json_decode($projetosFotos->images) as $images)
-                                                <span class="pic" id="{{ $loop->index }}">
-                                                    <a href="javascript:void(0)" onclick="deletefoto('{{ $images }}','{{ $loop->index }}')">
-                                                        <i class="fas fa-times close text-danger"></i>
-                                                    </a>
-                                                    <img width="250" class="img-thumbnail"
-                                                        src="/uploads/{{ $images }}" alt="">
-                                                </span>
+                                                    <span class="pic" id="{{ $loop->index }}">
+                                                        <a href="javascript:void(0)"
+                                                            onclick="deletefoto('{{ $images }}','{{ $loop->index }}')">
+                                                            <i class="fas fa-times close text-danger"></i>
+                                                        </a>
+                                                        <img width="250" class="img-thumbnail"
+                                                            src="/uploads/{{ $images }}" alt="">
+                                                    </span>
                                             @endforeach
 
                                         </div>
@@ -118,8 +119,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary" id="btnEnviar"
-                                    name="btnEnviar">Editar</button>
+                                <button type="submit" class="btn btn-primary" id="btnEnviar" name="btnEnviar">Editar</button>
                             </div>
                         </form>
                         <!-- /.card -->

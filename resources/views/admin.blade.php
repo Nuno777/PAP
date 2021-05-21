@@ -262,8 +262,8 @@
                         var reader = new FileReader();
 
                         reader.onload = function(event) {
-                            $($.parseHTML('<img width="200" class="img-thumbnail">')).attr('src', event
-                                .target.result).appendTo(imgPreviewPlaceholder);
+                            var img = $.parseHTML('<span class="pic new"><img width="200" class="img-thumbnail" src="' + event.target.result + '"</span>');
+                            $(img).appendTo(imgPreviewPlaceholder);
                         }
 
                         reader.readAsDataURL(input.files[i]);
@@ -272,16 +272,17 @@
 
             };
             $('#images').on('change', function() {
+                $('.new').remove();
                 multiImgPreview(this, 'div.imgPreview');
             });
         });
 
-        function deletefoto(images,projectId) {
+        function deletefoto(images, projectId) {
             $('#' + projectId).remove();
 
             $.ajax({
                 type: "delete",
-                url: "/uploads/",
+                url: "/uploads/" + images,
                 data: {
                     _token: '{{ csrf_token() }}'
                 },

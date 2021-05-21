@@ -95,7 +95,7 @@ class ProjetosFotosController extends Controller
         } else {
             $projectId = [];
         }
-        return view('ProjetosFotos.edit', compact('projetosFotos','projectId')); //o compact serve para passar o select
+        return view('ProjetosFotos.edit', compact('projetosFotos', 'projectId')); //o compact serve para passar o select
     }
 
     public function update(Request $request, $projectId, $projetosFotos)
@@ -107,6 +107,7 @@ class ProjetosFotosController extends Controller
             'inputLoc' => 'required',
             'inputData' => 'required'
         ]);
+
         //Inserção de dados no formulario projetosfotos
         $projetosFotos->titulo = request('inputTitulo');
         $projetosFotos->descricao = request('inputDesc');
@@ -116,15 +117,54 @@ class ProjetosFotosController extends Controller
 
         $projetosFotos->save();
 
+        // $request->validate([
+        //     //'imageFile' => 'required',
+        //     'imageFile.*' => 'mimes:jpeg,jpg,png,gif|max:4096'
+        // ]);
+
+        // if ($request->hasfile('imageFile')) {
+        //     $fileModal=ProjetosFotos::where('projectId',$projetosFotos->id)->first();
+        //     $images=($fileModal) ?json_decode($fileModal):[];
+        //     $i=count($images)+1;
+
+
+        //     foreach ($request->file('imageFile') as $file) {
+        //         $nameOriginal =  $file->getClientOriginalName();
+        //         //extensao da foto
+        //         $extension = pathinfo($nameOriginal, PATHINFO_EXTENSION);
+        //         //remover acentos da foto
+        //         $nameSemACENTOS = preg_replace(array("/(á|à|ã|â|ä)/", "/(Á|À|Ã|Â|Ä)/", "/(é|è|ê|ë)/", "/(É|È|Ê|Ë)/", "/(í|ì|î|ï)/", "/(Í|Ì|Î|Ï)/", "/(ó|ò|õ|ô|ö)/", "/(Ó|Ò|Õ|Ô|Ö)/", "/(ú|ù|û|ü)/", "/(Ú|Ù|Û|Ü)/", "/(ñ)/", "/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $nameOriginal);
+        //         //remover espacos da foto
+        //         $name = str_replace(' ', '', $nameSemACENTOS);
+        //         //$name = $nameSemACENTOS . $i . '.' . $extension;
+        //         $file->move(public_path() . '/uploads/', $name);
+        //         $imgData[] = $name;
+        //         $i++;
+        //     }
+
+        //     $imgData = array_merge($images ,$imgData);
+        //     $projetosFotos->images = json_encode($imgData);
+        //     $projetosFotos->save();
+        // }
+
         return redirect('/ProjetosFotos/show')->with('message', 'Informacoes do evento alterado com sucesso!!');
     }
 
-    public function destroy($projetosFotos)
+    public function destroy($projetosFotos, $images)
     {
         //eliminar um projeto
         ProjetosFotos::find($projetosFotos)->delete();
-        //elimina a foto da pasta
-        Storage::delete('/uploads/');
+        //elimina a foto da pasta uploads
+        Storage::delete('public/uploads/' . $images);
+
+        $projetosFoto = json_decode($projetosFotos->images);
+        if (($key = array_search($projetosFotos, $images)) != false) {
+            unset($projetosFotos[$key]);
+            $projetosFotos->images = $projetosFoto;
+        } else {
+            $projetosFotos->images = [];
+        }
+        $projetosFotos->save();
         return redirect('/ProjetosFotos/show')->with('message', 'Evento eliminada com sucesso!!');
     }
 }
