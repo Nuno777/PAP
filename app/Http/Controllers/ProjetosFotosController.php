@@ -28,7 +28,7 @@ class ProjetosFotosController extends Controller
 
     public function create()
     {
-        //Criar uma nova foto para a galeria
+        //Criar uma novo evento
         return view('ProjetosFotos.create');
     }
 

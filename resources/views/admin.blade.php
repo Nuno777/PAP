@@ -177,7 +177,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ url('/Noticias/create') }}" class="nav-link">
                                     <i class="fas fa-file nav-icon"></i>
                                     <p>Nova Notícia</p>
                                 </a>

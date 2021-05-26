@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Adicionar um Evento</h1>
+                    <h1>Adicionar uma Noticia</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                        <li class="breadcrumb-item active">Adicionar Evento</li>
+                        <li class="breadcrumb-item active">Adicionar Noticia</li>
                     </ol>
                 </div>
             </div>
@@ -27,79 +27,44 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Novo Evento</h3>
+                            <h3 class="card-title">Nova Noticia</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" method="POST" action="/ProjetosFotos" enctype="multipart/form-data">
+                        <form role="form" method="POST" action="/Noticias" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="inputTitulo">Titulo do Evento</label>
-                                    <input type="text" class="form-control" id="inputTitulo" name="inputTitulo"
-                                        value="{{ old('inputTitulo') }}" placeholder="Insira o titulo do evento" required>
-                                    @error('inputTitulo')
-                                        <p class="text-danger">
-                                            {{ $errors->first('inputTitulo') }}
-                                        </p>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputDesc">Descrição do Evento</label>
-                                    <input type="text" class="form-control" id="inputDesc" name="inputDesc"
-                                        value="{{ old('inputDesc') }}" placeholder="Insira a descrição do evento"
+                                    <label for="inputTituloNotic">Titulo da Noticia</label>
+                                    <input type="text" class="form-control" id="inputTituloNotic" name="inputTituloNotic"
+                                        value="{{ old('inputTituloNotic') }}" placeholder="Insira o titulo da noticia"
                                         required>
-                                    @error('inputDesc')
+                                    @error('inputTituloNotic')
                                         <p class="text-danger">
-                                            {{ $errors->first('inputDesc') }}
+                                            {{ $errors->first('inputTituloNotic') }}
                                         </p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputLoc">Localização do Evento</label>
-                                    <input type="text" class="form-control" id="inputLoc" name="inputLoc"
-                                        value="{{ old('inputLoc') }}" placeholder="Insira a localização do evento"
+                                    <label for="inputNotic">Noticia</label>
+                                    <input type="text" class="form-control" id="inputNotic" name="inputNotic"
+                                        value="{{ old('inputNotic') }}" placeholder="Insira a noticia" required>
+                                    @error('inputNotic')
+                                        <p class="text-danger">
+                                            {{ $errors->first('inputNotic') }}
+                                        </p>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputDataNotic">Data da Noticia</label>
+                                    <input type="date" class="form-control" id="inputDataNotic" name="inputDataNotic"
+                                        value="{{ old('inputDataNotic') }}" placeholder="Insira a data da noticia"
                                         required>
-                                    @error('inputLoc')
+                                    @error('inputDataNotic')
                                         <p class="text-danger">
-                                            {{ $errors->first('inputLoc') }}
+                                            {{ $errors->first('inputDataNotic') }}
                                         </p>
                                     @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputData">Data do Evento</label>
-                                    <input type="date" class="form-control" id="inputData" name="inputData"
-                                        value="{{ old('inputData') }}" placeholder="Insira a data do evento" required>
-                                    @error('inputData')
-                                        <p class="text-danger">
-                                            {{ $errors->first('inputData') }}
-                                        </p>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label>Fotos do Evento</label>
-                                    <div class="user-image mb-3 text-center">
-                                        <div class="imgPreview"> </div>
-                                    </div>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="images" name="imageFile[]"
-                                                multiple="multiple" required>
-                                            <label class="custom-file-label" for="images">Insira as fotos</label>
-                                        </div>
-                                        @error('imageFile')
-                                            <p class="text-danger">
-                                                {{ $errors->first('imageFile') }}
-                                            </p>
-                                        @enderror
-                                        @error('imageFile.*')
-                                            @foreach ($errors->all() as $error)
-                                                <p class="text-danger">
-                                                    {{ $error }}
-                                                </p>
-                                            @endforeach
-                                        @enderror
-                                    </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->

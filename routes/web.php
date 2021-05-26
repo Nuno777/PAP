@@ -18,6 +18,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('we
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\ProjetosFotosController::class, 'home'])->name('home');
+
+//Eventos
 Route::get('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->name('ProjetosFotos');
 Route::post('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::class, 'store']);
 Route::get('/ProjetosFotos/create', [App\Http\Controllers\ProjetosFotosController::class, 'create'])->name('ProjetosFotos.create');
@@ -28,3 +30,8 @@ Route::put('/ProjetosFotos/{ProjetosFotos}', [App\Http\Controllers\ProjetosFotos
 Route::get('/ProjetosFotos/show', [App\Http\Controllers\ProjetosFotosController::class, 'show']);
 Route::delete('/ProjetosFotos/{ProjetosFotos}', [App\Http\Controllers\ProjetosFotosController::class, 'destroy'])->name('ProjetosFotos.delete');
 Route::delete('/ProjetosFotos/{images}', [App\Http\Controllers\ProjetosFotosController::class, 'destroy'])->name('ProjetosFotos.deletefoto');
+
+//Noticias
+Route::get('/Noticias', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->name('ProjetosFotos');
+Route::post('/Noticias', [App\Http\Controllers\NoticiasController::class, 'store']);
+Route::get('/Noticias/create', [App\Http\Controllers\NoticiasController::class, 'create'])->name('Noticias.create');

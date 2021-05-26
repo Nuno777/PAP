@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class NoticiasController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin']);
+    }
+
     public function index()
     {
         //
@@ -14,12 +19,27 @@ class NoticiasController extends Controller
 
     public function create()
     {
-        //
+        //Criar uma noticia
+        return view('Noticias.create');
     }
 
     public function store(Request $request)
     {
-        //
+        //Validação do formulario de noticia
+        request()->validate([
+            'inputTituloNotic' => 'required',
+            'inputNotic' => 'required',
+            'inputDataNotic' => 'required'
+        ]);
+
+        //Inserção de dados no formulario de noticia
+        $noticias = new noticias();
+        $noticias->titulo = request('inputTituloNotic');
+        $noticias->noticia = request('inputNotic');
+        $noticias->data = request('inputDataNotic');
+        $noticias->save();
+
+        return redirect('/Noticias')->with('message', 'Nova noticia inserido com sucesso!!');
     }
 
     public function show(Noticias $noticias)
