@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Listagem dos Eventos</h1>
+                    <h1>Listagem das Noticias</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                        <li class="breadcrumb-item active">Lista dos Eventos</li>
+                        <li class="breadcrumb-item active">Lista das Noticias</li>
                     </ol>
                 </div>
             </div>
@@ -41,35 +41,66 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Lista dos Eventos</h3>
+                            <h3 class="card-title">Lista das Noticias</h3>
                         </div>
                         <br>
-                        <!-- Gallery -->
-                        <div class="row">
-                            @foreach ($projetosFotos as $projetoFoto)
-                                @php
-                                    $images = json_decode($projetoFoto->images);
-                                @endphp
+                        {{-- <div class="row">
+                            @foreach ($noticias as $noticia)
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class=" bg-dark rounded shadow-sm"><img src="/storage/uploads/{{ $images[0] }}"
-                                            alt="" style="height: 250px; widht: 100;" class="img-fluid card-img-top">
-                                        <div class="p-4 text-center" style="background-color:#3f474e">
-                                            <h4>{{ $projetoFoto->titulo }}</h4>
-                                            <p>{{ $projetoFoto->descricao }}</p>
-                                            <div class="text-center">
-                                                <form method="POST"
-                                                    action="{{ route('ProjetosFotos.delete', $projetoFoto->id) }}">
-                                                    <a href="{{ $projetoFoto->id }}/edit"
-                                                        class="btn btn-primary pr-30">Editar</a>&nbsp;
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                                                </form>
-                                            </div>
+                                    <div class="p-4 text-center" style="background-color:#3f474e">
+                                        <div class="text-center">
+                                            <form method="POST"
+                                                action="{{ route('ProjetosFotos.delete', $projetoFoto->id) }}">
+                                                <a href="{{ $projetoFoto->id }}/edit"
+                                                    class="btn btn-primary pr-30">Editar</a>&nbsp;
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
+                        </div> --}}
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example2" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Rendering engine</th>
+                                            <th>Browser</th>
+                                            <th>Platform(s)</th>
+                                            <th>Engine version</th>
+                                            <th>CSS grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Trident</td>
+                                            <td>Internet
+                                                Explorer 4.0
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td> 4</td>
+                                            <td>X</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Trident</td>
+                                            <td>Internet
+                                                Explorer 5.0
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td>5</td>
+                                            <td>C</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
                         </div>
                         <!-- Inner -->
                     </div>

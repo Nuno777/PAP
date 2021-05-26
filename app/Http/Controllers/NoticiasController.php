@@ -12,9 +12,15 @@ class NoticiasController extends Controller
         $this->middleware(['auth', 'admin']);
     }
 
+    public function home()
+    {
+        return view('ProjetosFotos.home');
+    }
+
     public function index()
     {
-        //
+        //Visualizacao do index
+        return view('ProjetosFotos.index');
     }
 
     public function create()
@@ -44,7 +50,9 @@ class NoticiasController extends Controller
 
     public function show(Noticias $noticias)
     {
-        //
+        //Listagem dos noticias
+        $noticias = Noticias::all(); //select * from noticias;
+        return view('Noticias.show', compact('noticias')); //o compact serve para passar o select
     }
 
     public function edit(Noticias $noticias)

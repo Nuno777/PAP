@@ -183,7 +183,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ url('/Noticias/show') }}" class="nav-link">
                                     <i class="fas fa-list nav-icon"></i>
                                     <p>Gerir Notícias</p>
                                 </a>
