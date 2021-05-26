@@ -51,8 +51,8 @@
                                     $images = json_decode($projetoFoto->images);
                                 @endphp
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class=" bg-dark rounded shadow-sm"><img src="/uploads/{{ $images[0] }}" alt=""
-                                            style="height: 250px; widht: 100;" class="img-fluid card-img-top">
+                                    <div class=" bg-dark rounded shadow-sm"><img src="/storage/uploads/{{ $images[0] }}"
+                                            alt="" style="height: 250px; widht: 100;" class="img-fluid card-img-top">
                                         <div class="p-4 text-center" style="background-color:#3f474e">
                                             <h4>{{ $projetoFoto->titulo }}</h4>
                                             <p>{{ $projetoFoto->descricao }}</p>

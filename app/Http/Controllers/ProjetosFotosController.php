@@ -66,7 +66,7 @@ class ProjetosFotosController extends Controller
                 //remover espacos da foto
                 $name = str_replace(' ', '', $nameSemACENTOS);
                 //$name = $nameSemACENTOS . $i . '.' . $extension;
-                $file->move(public_path() . '/uploads/', $name);
+                $file->storeAS('public/uploads/', $name);
                 $imgData[] = $name;
                 $i++;
             }
@@ -150,21 +150,21 @@ class ProjetosFotosController extends Controller
         return redirect('/ProjetosFotos/show')->with('message', 'Informacoes do evento alterado com sucesso!!');
     }
 
-    public function destroy($projetosFotos, $images)
+    public function destroy($projetosFotos)
     {
         //eliminar um projeto
         ProjetosFotos::find($projetosFotos)->delete();
         //elimina a foto da pasta uploads
-        Storage::delete('public/uploads/' . $images);
+        Storage::delete('public/uploads/' . $projetosFotos);
 
-        $projetosFoto = json_decode($projetosFotos->images);
-        if (($key = array_search($projetosFotos, $images)) != false) {
-            unset($projetosFotos[$key]);
-            $projetosFotos->images = $projetosFoto;
-        } else {
-            $projetosFotos->images = [];
-        }
-        $projetosFotos->save();
+        // $projetosFoto = json_decode($projetosFotos->projetosFoto);
+        // if (($key = array_search($projetosFotos, $images)) != false) {
+        //     unset($projetosFotos[$key]);
+        //     $projetosFotos->images = $projetosFoto;
+        // } else {
+        //     $projetosFotos->images = [];
+        // }
+        // $projetosFotos->save();
         return redirect('/ProjetosFotos/show')->with('message', 'Evento eliminada com sucesso!!');
     }
 }

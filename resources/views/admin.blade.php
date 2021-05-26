@@ -262,7 +262,9 @@
                         var reader = new FileReader();
 
                         reader.onload = function(event) {
-                            var img = $.parseHTML('<span class="pic new"><img width="200" class="img-thumbnail" src="' + event.target.result + '"</span>');
+                            var img = $.parseHTML(
+                                '<span class="pic new"><img width="200" class="img-thumbnail" src="' +
+                                event.target.result + '"</span>');
                             $(img).appendTo(imgPreviewPlaceholder);
                         }
 

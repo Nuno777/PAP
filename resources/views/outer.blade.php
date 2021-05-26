@@ -61,7 +61,7 @@
                     <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
                     <li><a href="#about"><i class="bx bx-user"></i> <span>Sobre</span></a></li>
                     <li><a href="#portfolio"><i class="bx bx-image"></i> Portfolio</a></li>
-                    <li><a href="#shop"><i class="bx bx-shopping-bag"></i> <span>Loja</span></a></li>
+                    <!--<li><a href="#shop"><i class="bx bx-shopping-bag"></i> <span>Loja</span></a></li>-->
                     <li><a href="#news"><i class="bx bx-news"></i> Noticias</a></li>
                 </ul>
             </nav><!-- .nav-menu -->
