@@ -43,7 +43,6 @@
                         <div class="card-header">
                             <h3 class="card-title">Lista das Noticias</h3>
                         </div>
-                        <br>
                         {{-- <div class="row">
                             @foreach ($noticias as $noticia)
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
@@ -62,56 +61,46 @@
                                 </div>
                             @endforeach
                         </div> --}}
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">DataTable with minimal features & hover style</h3>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <table id="example2" class="table table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 4.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td> 4</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 5.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td>5</td>
-                                            <td>C</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- Inner -->
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-center" scope="col">#</th>
+                                    <th class="text-center" scope="col">Titulo da Noticia</th>
+                                    <th class="text-center" scope="col">Descricao Noticia</th>
+                                    <th class="text-center" scope="col">Data da Noticia</th>
+                                    <th class="text-center" scope="col">Eliminar Noticia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($noticias as $noticia)
+                                    <tr>
+                                        <th class="text-center" scope="row">{{ $noticia->id }}</th>
+                                        <td class="text-center">{{ $noticia->titulo }}</td>
+                                        <td class="text-center">{{ $noticia->noticia }}</td>
+                                        <td class="text-center">{{ $noticia->data }}</td>
+                                        <td class="text-center">
+                                            <form role="form" action="{{ route('Noticias.delete', $noticia->id) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="link"
+                                                    style="background-color: transparent; border:none">
+                                                    <i class="fas fa-trash text-danger" data-toogle="tooltip"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                     <!-- Carousel wrapper -->
                 </div>
                 <!-- /.card -->
             </div>
-            <!--/.col (left) -->
         </div>
         <!-- /.row -->
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
     <!-- /.content -->
 @endsection

@@ -67,6 +67,9 @@ class NoticiasController extends Controller
 
     public function destroy(Noticias $noticias)
     {
-        //
+        //eliminar a noticia
+        Noticias::find($noticias)->delete();
+
+        return redirect('/Noticias/show')->with('message', 'Noticia eliminada com sucesso!!');
     }
 }

@@ -37,3 +37,4 @@ Route::post('/Noticias', [App\Http\Controllers\NoticiasController::class, 'store
 Route::get('/Noticias/create', [App\Http\Controllers\NoticiasController::class, 'create'])->name('Noticias.create');
 
 Route::get('/Noticias/show', [App\Http\Controllers\NoticiasController::class, 'show']);
+Route::delete('/Noticias/{Noticias}', [App\Http\Controllers\NoticiasController::class, 'destroy'])->name('Noticias.delete');
