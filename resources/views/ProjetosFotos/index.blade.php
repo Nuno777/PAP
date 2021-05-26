@@ -37,66 +37,61 @@
             </div>
             <!-- Info boxes -->
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a href="{{ url('/ProjetosFotos/show') }}">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-info elevation-1"><i class="far fa-calendar-alt"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Eventos</span>
-                            </div>
-                            <!-- /.info-box-content -->
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <br>
+                            <h4><strong>Eventos</strong></h4>
                         </div>
-                        <!-- /.info-box -->
-                    </a>
-                </div>
-                <!-- /.col -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-danger elevation-1"><i class="far fa-address-card"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Sobre</span>
+                        <div class="icon">
+                            <i class="far fa-calendar-alt"></i><br>
                         </div>
-                        <!-- /.info-box-content -->
+                        <a href="{{ url('/ProjetosFotos/show') }}" class="small-box-footer">Listar Eventos <i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                    <!-- /.info-box -->
                 </div>
-                <!-- /.col -->
 
-                <!-- fix for small devices only -->
-                <div class="clearfix hidden-md-up"></div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Loja</span>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <br>
+                            <h4><strong>Sobre</strong></h4>
                         </div>
-                        <!-- /.info-box-content -->
+                        <div class="icon">
+                            <i class="far fa-address-card"></i><br>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                    <!-- /.info-box -->
                 </div>
-                <!-- /.col -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a href="{{ url('/Noticias/show') }}">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="far fa-newspaper"></i></span>
 
-                            <div class="info-box-content">
-                                <span class="info-box-text">Noticias</span>
-                            </div>
-                            <!-- /.info-box-content -->
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg">
+                        <div class="inner">
+                            <br>
+                            <h4><strong>Loja</strong></h4>
                         </div>
-                    </a>
-                    <!-- /.info-box -->
+                        <div class="icon">
+                            <i class="fas fa-shopping-cart"></i><br>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
-                <!-- /.col -->
+
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <br>
+                            <h4><strong>Noticias</strong></h4>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-newspaper"></i><br>
+                        </div>
+                        <a href="{{ url('/Noticias/show') }}" class="small-box-footer ">Gerir Noticias <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
             </div>
-            <!-- /.row -->
         </div>
-        <!--/. container-fluid -->
     </section>
     <!-- /.content -->
 @endsection
