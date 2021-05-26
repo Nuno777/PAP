@@ -55,17 +55,33 @@ class NoticiasController extends Controller
         return view('Noticias.show', compact('noticias')); //o compact serve para passar o select
     }
 
-    public function edit(Noticias $noticias)
+    public function edit($projectNoticId)
     {
-        //
+        //Editar qualquer foto da galeria
+        $noticias = Noticias::find($projectNoticId); //select * from noticias;
+
+        return view('Noticias.edit', compact('noticias', 'projectNoticId')); //o compact serve para passar o select
     }
 
-    public function update(Request $request, Noticias $noticias)
+    public function update(Request $request, $noticias)
     {
-        //
+        //Validação do formulario de noticia
+        request()->validate([
+            'inputTituloNotic' => 'required',
+            'inputNotic' => 'required',
+            'inputDataNotic' => 'required'
+        ]);
+
+        //Inserção de dados no formulario de noticia
+        $noticias->titulo = request('inputTituloNotic');
+        $noticias->noticia = request('inputNotic');
+        $noticias->data = request('inputDataNotic');
+        $noticias->save();
+
+        return redirect('/Noticias/show')->with('message', 'Informacoes da noticia alterada com sucesso!!');
     }
 
-    public function destroy(Noticias $noticias)
+    public function destroy($noticias)
     {
         //eliminar a noticia
         Noticias::find($noticias)->delete();

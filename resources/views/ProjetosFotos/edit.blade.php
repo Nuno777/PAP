@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('ProjetosFotos.home')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -31,7 +31,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" method="POST" action="/ProjetosFotos/" enctype="multipart/form-data">
+                        <form role="form" method="" action="/ProjetosFotos/" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="card-body">

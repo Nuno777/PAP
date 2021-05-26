@@ -43,38 +43,21 @@
                         <div class="card-header">
                             <h3 class="card-title">Lista das Noticias</h3>
                         </div>
-                        {{-- <div class="row">
-                            @foreach ($noticias as $noticia)
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class="p-4 text-center" style="background-color:#3f474e">
-                                        <div class="text-center">
-                                            <form method="POST"
-                                                action="{{ route('ProjetosFotos.delete', $projetoFoto->id) }}">
-                                                <a href="{{ $projetoFoto->id }}/edit"
-                                                    class="btn btn-primary pr-30">Editar</a>&nbsp;
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Eliminar</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div> --}}
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th class="text-center" scope="col">#</th>
+                                    <th class="text-center" scope="col">N</th>
                                     <th class="text-center" scope="col">Titulo da Noticia</th>
                                     <th class="text-center" scope="col">Descricao Noticia</th>
                                     <th class="text-center" scope="col">Data da Noticia</th>
-                                    <th class="text-center" scope="col">Eliminar Noticia</th>
+                                    <th class="text-center" scope="col">Eliminar</th>
+                                    <th class="text-center" scope="col">Editar</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($noticias as $noticia)
                                     <tr>
-                                        <th class="text-center" scope="row">{{ $noticia->id }}</th>
+                                        <th class="text-center">{{ $noticia->id }}</th>
                                         <td class="text-center">{{ $noticia->titulo }}</td>
                                         <td class="text-center">{{ $noticia->noticia }}</td>
                                         <td class="text-center">{{ $noticia->data }}</td>
@@ -88,6 +71,14 @@
                                                     <i class="fas fa-trash text-danger" data-toogle="tooltip"></i>
                                                 </button>
                                             </form>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="{{ $noticia->id }}/edit" style="color:#fff ">
+                                                <button type="submit" class="link"
+                                                    style="background-color: transparent; border:none">
+                                                    <i class="fas fa-pen text-yellow" data-toogle="tooltip"></i>
+                                            </a>
+                                            </button>
                                         </td>
                                     </tr>
                                 @endforeach
