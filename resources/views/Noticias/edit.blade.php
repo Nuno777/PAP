@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Editar a Noticia</h1>
+                    <h1>Editar a Notícia</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                        <li class="breadcrumb-item active">Editar Noticia</li>
+                        <li class="breadcrumb-item active">Editar Notícia</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Editar Noticia</h3>
+                            <h3 class="card-title">Editar Notícia</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -36,10 +36,10 @@
                             @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="inputTituloNotic">Titulo da Noticia</label>
+                                    <label for="inputTituloNotic">Titulo da Notícia</label>
                                     <input type="text" class="form-control" id="inputTituloNotic" name="inputTituloNotic"
                                         value="{{ old('titulo') ?? $noticias->titulo }}"
-                                        placeholder="Insira o titulo da noticia" required>
+                                        placeholder="Insira o titulo da notícia" required>
                                     @error('inputTituloNotic')
                                         <p class="text-danger">
                                             {{ $errors->first('inputTituloNotic') }}
@@ -47,9 +47,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputNotic">Noticia</label>
+                                    <label for="inputNotic">Notícia</label>
                                     <input type="text" class="form-control" id="inputNotic" name="inputNotic"
-                                        value="{{ old('noticia') ?? $noticias->noticia }}" placeholder="Insira a noticia"
+                                        value="{{ old('noticia') ?? $noticias->noticia }}" placeholder="Insira a notícia"
                                         required>
                                     @error('inputNotic')
                                         <p class="text-danger">
@@ -58,10 +58,10 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputDataNotic">Data da Noticia</label>
+                                    <label for="inputDataNotic">Data da Notícia</label>
                                     <input type="date" class="form-control" id="inputDataNotic" name="inputDataNotic"
                                         value="{{ old('data') ?? $noticias->data }}"
-                                        placeholder="Insira a data da noticia" required>
+                                        placeholder="Insira a data da notícia" required>
                                     @error('inputDataNotic')
                                         <p class="text-danger">
                                             {{ $errors->first('inputDataNotic') }}

@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Adicionar uma Noticia</h1>
+                    <h1>Adicionar uma Notícia</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                        <li class="breadcrumb-item active">Adicionar Noticia</li>
+                        <li class="breadcrumb-item active">Adicionar Notícia</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Nova Noticia</h3>
+                            <h3 class="card-title">Nova Notícia</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -35,9 +35,9 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="inputTituloNotic">Titulo da Noticia</label>
+                                    <label for="inputTituloNotic">Titulo da Notícia</label>
                                     <input type="text" class="form-control" id="inputTituloNotic" name="inputTituloNotic"
-                                        value="{{ old('inputTituloNotic') }}" placeholder="Insira o titulo da noticia"
+                                        value="{{ old('inputTituloNotic') }}" placeholder="Insira o titulo da notícia"
                                         required>
                                     @error('inputTituloNotic')
                                         <p class="text-danger">
@@ -46,9 +46,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputNotic">Noticia</label>
+                                    <label for="inputNotic">Notícia</label>
                                     <input type="text" class="form-control" id="inputNotic" name="inputNotic"
-                                        value="{{ old('inputNotic') }}" placeholder="Insira a noticia" required>
+                                        value="{{ old('inputNotic') }}" placeholder="Insira a notícia" required>
                                     @error('inputNotic')
                                         <p class="text-danger">
                                             {{ $errors->first('inputNotic') }}
@@ -56,9 +56,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputDataNotic">Data da Noticia</label>
+                                    <label for="inputDataNotic">Data da Notícia</label>
                                     <input type="date" class="form-control" id="inputDataNotic" name="inputDataNotic"
-                                        value="{{ old('inputDataNotic') }}" placeholder="Insira a data da noticia"
+                                        value="{{ old('inputDataNotic') }}" placeholder="Insira a data da notícia"
                                         required>
                                     @error('inputDataNotic')
                                         <p class="text-danger">

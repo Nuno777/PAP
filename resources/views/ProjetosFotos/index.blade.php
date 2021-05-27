@@ -81,7 +81,7 @@
                     <div class="small-box bg-success">
                         <div class="inner">
                             <br>
-                            <h4><strong>Noticias</strong></h4>
+                            <h4><strong>Notícias</strong></h4>
                         </div>
                         <div class="icon">
                             <i class="far fa-newspaper"></i><br>

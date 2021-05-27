@@ -45,7 +45,7 @@ class NoticiasController extends Controller
         $noticias->data = request('inputDataNotic');
         $noticias->save();
 
-        return redirect('/Noticias')->with('message', 'Nova noticia inserido com sucesso!!');
+        return redirect('/Noticias')->with('message', 'Nova notícia inserido com sucesso!!');
     }
 
     public function show(Noticias $noticias)
@@ -78,7 +78,7 @@ class NoticiasController extends Controller
         $noticias->data = request('inputDataNotic');
         $noticias->save();
 
-        return redirect('/Noticias/show')->with('message', 'Informacoes da noticia alterada com sucesso!!');
+        return redirect('/Noticias/show')->with('message', 'Informacoes da notícia alterada com sucesso!!');
     }
 
     public function destroy($noticias)
@@ -86,6 +86,6 @@ class NoticiasController extends Controller
         //eliminar a noticia
         Noticias::find($noticias)->delete();
 
-        return redirect('/Noticias/show')->with('message', 'Noticia eliminada com sucesso!!');
+        return redirect('/Noticias/show')->with('message', 'Notícia eliminada com sucesso!!');
     }
 }
