@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('welcome');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\ProjetosFotosController::class, 'home'])->name('home');
+Route::get('/home', [App\Http\Controllers\ProjetosFotosController::class, 'home'])->middleware('auth')->name('home');
 
 //Eventos
-Route::get('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->name('ProjetosFotos');
+Route::get('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->middleware('auth')->name('ProjetosFotos');
 Route::post('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::class, 'store']);
 Route::get('/ProjetosFotos/create', [App\Http\Controllers\ProjetosFotosController::class, 'create'])->name('ProjetosFotos.create');
 
@@ -32,7 +32,7 @@ Route::delete('/ProjetosFotos/{ProjetosFotos}', [App\Http\Controllers\ProjetosFo
 Route::delete('/ProjetosFotos/{images}', [App\Http\Controllers\ProjetosFotosController::class, 'destroy'])->name('ProjetosFotos.deletefoto');
 
 //Noticias
-Route::get('/Noticias', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->name('ProjetosFotos');
+Route::get('/Noticias', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->middleware('auth')->name('ProjetosFotos');
 Route::post('/Noticias', [App\Http\Controllers\NoticiasController::class, 'store']);
 Route::get('/Noticias/create', [App\Http\Controllers\NoticiasController::class, 'create'])->name('Noticias.create');
 
