@@ -50,8 +50,8 @@
                                     <th class="text-center" scope="col">Titulo da Notícia</th>
                                     <th class="text-center" scope="col">Descricao Notícia</th>
                                     <th class="text-center" scope="col">Data da Notícia</th>
-                                    <th class="text-center" scope="col">Eliminar</th>
                                     <th class="text-center" scope="col">Editar</th>
+                                    <th class="text-center" scope="col">Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,6 +62,14 @@
                                         <td class="text-center">{{ $noticia->noticia }}</td>
                                         <td class="text-center">{{ $noticia->data }}</td>
                                         <td class="text-center">
+                                            <a href="{{ $noticia->id }}/edit" style="color:#fff ">
+                                                <button type="submit" class="link"
+                                                    style="background-color: transparent; border:none">
+                                                    <i class="fas fa-pen text-yellow" data-toogle="tooltip"></i>
+                                            </a>
+                                            </button>
+                                        </td>
+                                        <td class="text-center">
                                             <form role="form" action="{{ route('Noticias.delete', $noticia->id) }}"
                                                 method="POST">
                                                 @csrf
@@ -71,14 +79,6 @@
                                                     <i class="fas fa-trash text-danger" data-toogle="tooltip"></i>
                                                 </button>
                                             </form>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="{{ $noticia->id }}/edit" style="color:#fff ">
-                                                <button type="submit" class="link"
-                                                    style="background-color: transparent; border:none">
-                                                    <i class="fas fa-pen text-yellow" data-toogle="tooltip"></i>
-                                            </a>
-                                            </button>
                                         </td>
                                     </tr>
                                 @endforeach

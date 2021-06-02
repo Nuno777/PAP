@@ -57,7 +57,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputLoc">Localização do Evento</label>
-                                    <input type="text" class="form-control" id="inputLoc" name="inputLoc"
+                                    <input type="text" class="form-control"
+                                        onkeypress="return /[A-Za-z\s]/i.test(event.key)" id="inputLoc" name="inputLoc"
                                         value="{{ old('inputLoc') }}" placeholder="Insira a localização do evento"
                                         required>
                                     @error('inputLoc')

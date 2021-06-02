@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('welcome');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
 
 Auth::routes();
 
@@ -22,11 +22,9 @@ Route::get('/home', [App\Http\Controllers\ProjetosFotosController::class, 'home'
 //Eventos
 Route::get('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->middleware('auth')->name('ProjetosFotos');
 Route::post('/ProjetosFotos', [App\Http\Controllers\ProjetosFotosController::class, 'store']);
-Route::get('/ProjetosFotos/create', [App\Http\Controllers\ProjetosFotosController::class, 'create'])->name('ProjetosFotos.create');
-
-Route::get('/ProjetosFotos/{ProjetosFotos}/edit', [App\Http\Controllers\ProjetosFotosController::class, 'edit'])->name('ProjetosFotos.edit');
+Route::get('/ProjetosFotos/create', [App\Http\Controllers\ProjetosFotosController::class, 'create'])->middleware('auth')->name('ProjetosFotos.create');
+Route::get('/ProjetosFotos/{ProjetosFotos}/edit', [App\Http\Controllers\ProjetosFotosController::class, 'edit'])->middleware('auth')->name('ProjetosFotos.edit');
 Route::put('/ProjetosFotos/{ProjetosFotos}', [App\Http\Controllers\ProjetosFotosController::class, 'update'])->name('ProjetosFotos.update');
-
 Route::get('/ProjetosFotos/show', [App\Http\Controllers\ProjetosFotosController::class, 'show']);
 Route::delete('/ProjetosFotos/{ProjetosFotos}', [App\Http\Controllers\ProjetosFotosController::class, 'destroy'])->name('ProjetosFotos.delete');
 Route::delete('/ProjetosFotos/{images}', [App\Http\Controllers\ProjetosFotosController::class, 'destroy'])->name('ProjetosFotos.deletefoto');
@@ -34,10 +32,8 @@ Route::delete('/ProjetosFotos/{images}', [App\Http\Controllers\ProjetosFotosCont
 //Noticias
 Route::get('/Noticias', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->middleware('auth')->name('ProjetosFotos');
 Route::post('/Noticias', [App\Http\Controllers\NoticiasController::class, 'store']);
-Route::get('/Noticias/create', [App\Http\Controllers\NoticiasController::class, 'create'])->name('Noticias.create');
-
-Route::get('/Noticias/{Noticias}/edit', [App\Http\Controllers\NoticiasController::class, 'edit'])->name('Noticias.edit');
+Route::get('/Noticias/create', [App\Http\Controllers\NoticiasController::class, 'create'])->middleware('auth')->name('Noticias.create');
+Route::get('/Noticias/{Noticias}/edit', [App\Http\Controllers\NoticiasController::class, 'edit'])->middleware('auth')->name('Noticias.edit');
 Route::put('/Noticias/{Noticias}', [App\Http\Controllers\NoticiasController::class, 'update'])->name('Noticias.update');
-
 Route::get('/Noticias/show', [App\Http\Controllers\NoticiasController::class, 'show']);
 Route::delete('/Noticias/{Noticias}', [App\Http\Controllers\NoticiasController::class, 'destroy'])->name('Noticias.delete');
