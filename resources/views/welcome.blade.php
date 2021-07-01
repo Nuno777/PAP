@@ -263,7 +263,7 @@
         </section><!-- End Portfolio Section -->
 
         <!-- ======= Services Section ======= -->
-        <section id="shop" class="services">
+        {{-- <section id="shop" class="services">
             <div class="container">
 
                 <div class="section-title">
@@ -313,10 +313,11 @@
                 </div>
 
             </div>
-        </section><!-- End Services Section -->
+        </section> --}}
+        <!-- End Services Section -->
 
         <!-- ======= Testimonials Section ======= -->
-        <section id="news" class="testimonials section-bg">
+        <section id="news" class="testimonials ">
             <div class="container">
 
                 <div class="section-title">
@@ -326,7 +327,6 @@
                 <div class="owl-carousel testimonials-carousel">
 
                     <div class="testimonial-item" data-aos="fade-up">
-                        <p>Proin iaculis pur</p>
                         <p>
                             Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
                             Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
