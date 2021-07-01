@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Joao Almeida</title>
+    <title>João Almeida</title>
     <meta content=""
         name="Joao Almeida,Joao,Almeida,ciclismo,ciclismo portugues, ciclismo europeu, ciclismo mundial, bicicletas">
 
@@ -40,7 +40,7 @@
 
         <div class="d-flex flex-column">
             <div class="profile">
-                <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+                <img src="assets/img/icon-joao.png" alt="" class="img-fluid rounded-circle">
                 <h1 class="text-light">João Almeida</a></h1>
                 <div class="social-links mt-3 text-center">
                     <a href="https://www.instagram.com/joao.almeida.cyclist/" target="_blank" class="instagram"><i
