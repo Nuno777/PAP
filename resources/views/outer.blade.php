@@ -62,7 +62,7 @@
                     <li><a href="#about"><i class="bx bx-user"></i> <span>Sobre</span></a></li>
                     <li><a href="#portfolio"><i class="bx bx-image"></i> Portfolio</a></li>
                     <!--<li><a href="#shop"><i class="bx bx-shopping-bag"></i> <span>Loja</span></a></li>-->
-                    <li><a href="#news"><i class="bx bx-news"></i> Noticias</a></li>
+                    <li><a href="#news"><i class="bx bx-news"></i> Notícias</a></li>
                 </ul>
             </nav><!-- .nav-menu -->
             <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>

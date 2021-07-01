@@ -16,10 +16,7 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>About</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                        fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Sobre João Almeida</h2>
                 </div>
 
                 <div class="row">
@@ -27,28 +24,18 @@
                         <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                        <h3>UI/UX Designer &amp; Web Developer.</h3>
+                        <h3>João Almeida</h3>
                         <p class="font-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
+                            Atualmente encontra-se na equipa da Deceuninck - Quick Step.
                         </p>
                         <div class="row">
                             <div class="col-lg-6">
                                 <ul>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> </li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Nationality:</strong> </li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Weight:</strong> </li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Height:</strong> </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> 30</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Master</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong> email@example.com
-                                    </li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Available</li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Birthday: </strong>5 de Agosto de 1998
+                                        (22) </li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Nationality: </strong>Portuguesa </li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Weight: </strong>63 kg </li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Height: </strong>1.78 m </li>
                                 </ul>
                             </div>
                         </div>
@@ -145,7 +132,7 @@
         </section><!-- End Resume Section -->
 
         <!-- ======= Facts Section ======= -->
-        <section id="facts" class="facts">
+        {{-- <section id="facts" class="facts">
             <div class="container">
 
                 <div class="section-title">
@@ -192,7 +179,8 @@
                 </div>
 
             </div>
-        </section><!-- End Facts Section -->
+        </section> --}}
+        <!-- End Facts Section -->
 
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio section-bg">
@@ -332,7 +320,7 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Noticias</h2>
+                    <h2>Notícias</h2>
                 </div>
 
                 <div class="owl-carousel testimonials-carousel">
