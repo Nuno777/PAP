@@ -8,10 +8,10 @@
     Version: 1.0
 
 ----------------------------------------------
-    
+
     CSS INDEX
     ===================
-  
+
     1. Core Css
     2. Dashboard One
         2.1 Sidebar Menu
@@ -166,7 +166,7 @@
 }
 
 .metismenu li a i {
-    color: #6a56a5;
+    color: #149ddd;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -687,7 +687,7 @@ ul.breadcrumbs {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    color: #7801ff;
+    color: #149ddd;
     letter-spacing: 0;
     margin-right: 16px;
     position: relative;
@@ -717,8 +717,8 @@ ul.breadcrumbs {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%);
-    background: linear-gradient(to right, #8914fe 0%, #8063f5 100%);
+    background: -webkit-linear-gradient(left, #fff 0%, #149ddd 100%);
+    background: linear-gradient(to right, #fff 0%, #149ddd 100%);
     padding: 17px 38px;
     position: relative;
 }
@@ -2107,7 +2107,7 @@ div.dataTables_wrapper div.dataTables_length select {
 /* datatable-primary */
 
 .datatable-primary thead {
-    background: #4336fb;
+    background: #149ddd;
     color: #fff;
 }
 

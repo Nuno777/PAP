@@ -7,8 +7,7 @@
     <title>Admin Dashboard</title>
     <link href="assets/img/user.png" rel="icon">
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
     <!-- overlayScrollbars -->
@@ -30,7 +29,6 @@
             right: 0;
             z-index: 9999;
         }
-
     </style>
 
 </head>
@@ -69,8 +67,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/home" class="brand-link">
-                <img src="/dist/img/icon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-0"
-                    style="opacity: .8">
+                <img src="/dist/img/icon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-0" style="opacity: .8">
                 <span class="brand-text font-weight-light"> BOTA LUME</span>
             </a>
 
@@ -89,8 +86,7 @@
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-sidebar">
                                 <i class="fas fa-search fa-fw"></i>
@@ -101,8 +97,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
@@ -294,7 +289,6 @@
                 }
             });
         }
-
     </script>
 </body>
 
