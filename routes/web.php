@@ -30,7 +30,7 @@ Route::delete('/ProjetosFotos/{ProjetosFotos}', [App\Http\Controllers\ProjetosFo
 Route::delete('/ProjetosFotos/{images}', [App\Http\Controllers\ProjetosFotosController::class, 'destroy'])->name('ProjetosFotos.deletefoto');
 
 //Noticias
-Route::get('/Noticias', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->middleware('auth')->name('ProjetosFotos');
+Route::get('/Noticias', [App\Http\Controllers\ProjetosFotosController::class, 'index'])->middleware('auth')->name('Noticias');
 Route::post('/Noticias', [App\Http\Controllers\NoticiasController::class, 'store']);
 Route::get('/Noticias/create', [App\Http\Controllers\NoticiasController::class, 'create'])->middleware('auth')->name('Noticias.create');
 Route::get('/Noticias/{Noticias}/edit', [App\Http\Controllers\NoticiasController::class, 'edit'])->middleware('auth')->name('Noticias.edit');
