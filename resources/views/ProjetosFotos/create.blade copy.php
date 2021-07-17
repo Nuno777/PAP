@@ -3,67 +3,35 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <!-- header area start -->
-        <div class="header-area">
-            <div class="row align-items-center">
-                <!-- nav and search button -->
-                <div class="col-md-3 col-sm-8 clearfix">
-                    <div class="nav-btn pull-left">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <a href="/">
-                        <h4 class="page-title pull-left nav-link">Pagina Principal</h4>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-        <!-- header area end -->
-        <!-- page title area start -->
-        <div class="page-title-area">
-            <div class="row align-items-center">
+        <div class="container-fluid">
+            <div class="row mb-2">
                 <div class="col-sm-6">
-                    <div class="breadcrumbs-area clearfix">
-                        <h4 class="page-title pull-left">Administração</h4>
-                        <ul class="breadcrumbs pull-left">
-                            <li><a href="/home">Home</a></li>
-                            <li><span>Novo Evento</span></li>
-                        </ul>
-                    </div>
+                    <h1>Adicionar um Evento</h1>
                 </div>
-                <div class="col-sm-6 clearfix">
-                    <div class="user-profile pull-right">
-                        <div class="ml-auto">
-                            <a style="color: #313b3d" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                        <li class="breadcrumb-item active">Adicionar Evento</li>
+                    </ol>
                 </div>
             </div>
-        </div>
-        <!-- page title area end -->
+        </div><!-- /.container-fluid -->
     </section>
+
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row" style="background-color: #F3F8FB">
+            <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
                     <!-- general form elements -->
-                    <div class="card card-primary" style="background-color: #F3F8FB">
-                        <div class="card-body">
-                            <h4 class="title">Novo Evento</h4>
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Novo Evento</h3>
                         </div>
+                        <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" method="POST" action="/ProjetosFotos" enctype="multipart/form-data"
-                            style="background-color: #F3F8FB">
+                        <form role="form" method="POST" action="/ProjetosFotos" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
@@ -135,18 +103,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <button type="submit" class="btn btn-primary mb-3" id="btnEnviar"
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" id="btnEnviar"
                                     name="btnEnviar">Enviar</button>&nbsp;
-                                <button type="reset" class="btn btn-danger mb-3" id="btnLimpar"
-                                    name="btnLimpar">Limpar</button>
+                                <button type="reset" class="btn btn-danger" id="btnLimpar" name="btnLimpar">Limpar</button>
                             </div>
                         </form>
+                        <!-- /.card -->
                     </div>
+                    <!--/.col (left) -->
                 </div>
                 <!-- /.row -->
-            </div>
-        </div>
+            </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
 @endsection

@@ -3,19 +3,50 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Listagem das Notícias</h1>
+        <div class="header-area">
+            <div class="row align-items-center">
+                <!-- nav and search button -->
+                <div class="col-md-3 col-sm-8 clearfix">
+                    <div class="nav-btn pull-left">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <a href="/">
+                        <h4 class="page-title pull-left nav-link">Pagina Principal</h4>
+                    </a>
                 </div>
+
+            </div>
+        </div>
+        <!-- header area end -->
+        <!-- page title area start -->
+        <div class="page-title-area">
+            <div class="row align-items-center">
                 <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                        <li class="breadcrumb-item active">Lista das Notícias</li>
-                    </ol>
+                    <div class="breadcrumbs-area clearfix">
+                        <h4 class="page-title pull-left">Administração</h4>
+                        <ul class="breadcrumbs pull-left">
+                            <li><a href="/home">Home</a></li>
+                            <li><span>Lista das Notícias</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 clearfix">
+                    <div class="user-profile pull-right">
+                        <div class="ml-auto">
+                            <a style="color: #313b3d" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
 
     <!-- Main content -->
@@ -37,61 +68,63 @@
 
             <div class="row">
                 <!-- left column -->
-                <div class="col-md-12">
+                <div class="col-md-12" style="background-color: #F3F8FB">
                     <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Lista das Notícias</h3>
+                    <div class="card card-primary" style="background-color: #F3F8FB">
+                        <div class="card-body">
+                            <h4 class="title">Lista das Notícias</h4>
                         </div>
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th class="text-center" scope="col">Nº</th>
-                                    <th class="text-center" scope="col">Titulo da Notícia</th>
-                                    <th class="text-center" scope="col">Descricao Notícia</th>
-                                    <th class="text-center" scope="col">Data da Notícia</th>
-                                    <th class="text-center" scope="col">Editar</th>
-                                    <th class="text-center" scope="col">Eliminar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($noticias as $noticia)
-                                    <tr>
-                                        <th class="text-center">{{ $noticia->id }}</th>
-                                        <td class="text-center">{{ $noticia->titulo }}</td>
-                                        <td class="text-center">{{ $noticia->noticia }}</td>
-                                        <td class="text-center">{{ $noticia->data }}</td>
-                                        <td class="text-center">
-                                            <a href="{{ $noticia->id }}/edit" style="color:#fff ">
-                                                <button type="submit" class="link"
-                                                    style="background-color: transparent; border:none">
-                                                    <i class="fas fa-pen text-yellow" data-toogle="tooltip"></i>
-                                            </a>
-                                            </button>
-                                        </td>
-                                        <td class="text-center">
-                                            <form role="form" action="{{ route('Noticias.delete', $noticia->id) }}"
-                                                method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="link"
-                                                    style="background-color: transparent; border:none">
-                                                    <i class="fas fa-trash text-danger" data-toogle="tooltip"></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        <div class="single-table">
+                            <div class="table-responsive">
+                                <table class="table text-center">
+                                    <thead class="text-uppercase">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Titulo</th>
+                                            <th scope="col">Notícia</th>
+                                            <th scope="col">Data</th>
+                                            <th scope="col">Editar</th>
+                                            <th scope="col">Eliminar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($noticias as $noticia)
+                                            <tr>
+                                                <th scope="row">{{ $noticia->id }}</th>
+                                                <td>{{ $noticia->titulo }}</td>
+                                                <td>{{ $noticia->noticia }}</td>
+                                                <td>{{ $noticia->data }}</td>
+                                                <td>
+                                                    <a href="{{ $noticia->id }}/edit">
+                                                        <button type="submit" class="link"
+                                                            style="background-color: transparent; border:none">
+                                                            <i class="ti-pencil" data-toogle="tooltip"></i>
+                                                    </a>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <form role="form"
+                                                        action="{{ route('Noticias.delete', $noticia->id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="link"
+                                                            style="background-color: transparent; border:none">
+                                                            <i class="ti-trash text-danger" data-toogle="tooltip"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Carousel wrapper -->
                 </div>
-                <!-- /.card -->
             </div>
         </div>
         <!-- /.row -->
-        </div>
     </section>
     <!-- /.content -->
 @endsection

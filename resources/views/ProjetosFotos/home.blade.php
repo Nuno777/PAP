@@ -13,12 +13,13 @@
                         <span></span>
                         <span></span>
                     </div>
-                    <a href="/"><h4 class="page-title pull-left nav-link">Pagina Principal</h4></a>
+                    <a href="/">
+                        <h4 class="page-title pull-left nav-link">Pagina Principal</h4>
+                    </a>
                 </div>
 
             </div>
         </div>
-
         <!-- header area end -->
         <!-- page title area start -->
         <div class="page-title-area">
@@ -27,7 +28,7 @@
                     <div class="breadcrumbs-area clearfix">
                         <h4 class="page-title pull-left">Administração</h4>
                         <ul class="breadcrumbs pull-left">
-                            <li ><a href="/" >Home</a></li>
+                            <li><a href="/home">Home</a></li>
                             <li><span>Dashboard</span></li>
                         </ul>
                     </div>
@@ -36,7 +37,7 @@
                     <div class="user-profile pull-right">
                         <div class="ml-auto">
                             <a style="color: #313b3d" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
+                                    document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

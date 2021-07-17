@@ -3,19 +3,50 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Listagem dos Eventos</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                        <li class="breadcrumb-item active">Lista dos Eventos</li>
-                    </ol>
+        <!-- header area start -->
+        <div class="header-area">
+            <div class="row align-items-center">
+                <!-- nav and search button -->
+                <div class="col-md-3 col-sm-8 clearfix">
+                    <div class="nav-btn pull-left">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <a href="/">
+                        <h4 class="page-title pull-left nav-link">Pagina Principal</h4>
+                    </a>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
+        <!-- header area end -->
+        <!-- page title area start -->
+        <div class="page-title-area">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <div class="breadcrumbs-area clearfix">
+                        <h4 class="page-title pull-left">Administração</h4>
+                        <ul class="breadcrumbs pull-left">
+                            <li><a href="/home">Home</a></li>
+                            <li><span>Lista dos Eventos</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 clearfix">
+                    <div class="user-profile pull-right">
+                        <div class="ml-auto">
+                            <a style="color: #313b3d" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Main content -->
@@ -34,16 +65,14 @@
                     @endif
                 </div>
             </div>
-
             <div class="row">
                 <!-- left column -->
-                <div class="col-md-12">
+                <div class="col-md-12" style="background-color: #F3F8FB">
                     <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Lista dos Eventos</h3>
+                    <div class="card card-primary" style="background-color: #F3F8FB">
+                        <div class="card-body">
+                            <h4 class="title">Lista dos Eventos</h4>
                         </div>
-                        <br>
                         <!-- Gallery -->
                         <div class="row">
                             @foreach ($projetosFotos as $projetoFoto)
@@ -51,11 +80,12 @@
                                     $images = json_decode($projetoFoto->images);
                                 @endphp
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class=" bg-dark rounded shadow-sm"><img src="/storage/uploads/{{ $images[0] }}"
-                                            alt="" style="height: 250px; widht: 100;" class="img-fluid card-img-top">
-                                        <div class="p-4 text-center" style="background-color:#3f474e">
-                                            <h4>{{ $projetoFoto->titulo }}</h4>
-                                            <p>{{ $projetoFoto->descricao }}</p>
+                                    <div class="card card-bordered">
+                                        <img src="/storage/uploads/{{ $images[0] }}" alt=""
+                                            style="height: 250px; widht: 100;" class="img-fluid card-img-top">
+                                        <div class="card-body text-center">
+                                            <h5 class="title">{{ $projetoFoto->titulo }}</h5>
+                                            <p class="card-text">{{ $projetoFoto->descricao }}</p>
                                             <div class="text-center">
                                                 <form method="POST"
                                                     action="{{ route('ProjetosFotos.delete', $projetoFoto->id) }}">
@@ -71,16 +101,11 @@
                                 </div>
                             @endforeach
                         </div>
-                        <!-- Inner -->
                     </div>
-                    <!-- Carousel wrapper -->
                 </div>
-                <!-- /.card -->
             </div>
-            <!--/.col (left) -->
         </div>
         <!-- /.row -->
-        </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
 @endsection
