@@ -62,7 +62,11 @@
                     <a class="brand-link">
                         <img src="/dist/img/user.png" alt="Bota Lume" class="brand-image img-circle elevation-0"
                             style="opacity: .9; width: 40px">
-                        <span style="color: #fff">{{ Auth::user()->name }}</span>
+                        <span style="color: #fff">
+                            @auth
+                                {{ Auth::user()->name }}
+                            @endauth
+                        </span>
                     </a>
                 </div>
             </div>
