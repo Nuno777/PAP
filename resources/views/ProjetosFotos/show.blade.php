@@ -89,22 +89,77 @@
                                             <div class="text-center">
                                                 <form method="POST"
                                                     action="{{ route('ProjetosFotos.delete', $projetoFoto->id) }}">
-                                                    <a href="{{ $projetoFoto->id }}/edit"
-                                                        class="btn btn-primary pr-30">Editar</a>&nbsp;
+
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger">Eliminar</button>
                                                 </form>
+                                                <button
+                                                class="btn btn-light-primary font-weight-bolder btn-sm data-mytitle="
+
+
+                                                data-catid={{ $projetoFoto->id }} data-toggle="modal"
+                                                data-target="#edit">Edit</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                        aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Editar Evento</h4>
+                                            </div>
+                                            <form action="{{ route('ProjetosFotos.update', $projetoFoto->id) }}" method="POST">
+                                                @csrf
+                                                @method('POST')
+                                                <div class="form-group row">
+
+                                                    <label class="col-xl-3 col-lg-3 col-form-label text-right">Avatar</label>
+                                                    <div class="col-lg-9 col-xl-6">
+
+                                                        <label> Update Your avatar</label>
+                                                        <input type="file" name="image">
+                                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                        <span class="form-text text-muted">Allowed file types: png, jpg,
+                                                            jpeg.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <input type="text" class="form-control border-0" name="titulo" id="titulo" placeholder="{{ $projetoFoto->titulo }}" />
+                                                    <input type="text" class="form-control border-0" name="desc" id="desc" placeholder="{{ $projetoFoto->descricao }}" />
+                                                    <input type="text" class="form-control border-0" name="local" id="local" placeholder="{{ $projetoFoto->localizacao }}" />
+                                                    <input type="text" class="form-control border-0" name="data" id="data" placeholder="{{ $projetoFoto->data }}" />
+
+
+
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
+
         <!-- /.row -->
     </section>
     <!-- /.content -->

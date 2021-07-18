@@ -204,9 +204,14 @@
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
                     @foreach ($projetosFotos as $projetosFoto)
+                        @php
+                            $tirar = ['name', '{', '}', '[', ']', ':', '"'];
+                            $foto = str_replace($tirar, '', $projetosFoto->images);
+
+                        @endphp
                         <div class="col-lg-4 col-md-6 portfolio-item filter-2021">
                             <div class="portfolio-wrap">
-                                <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <img src="/storage/uploads/{{ $foto }}" class="img-fluid" alt="">
                                 <div class="portfolio-links">
                                     <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery"
                                         class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
@@ -282,46 +287,22 @@
                     <h2>Notícias</h2>
                 </div>
 
-                <div class="owl-carousel testimonials-carousel">
 
-                    <div class="testimonial-item" data-aos="fade-up">
-                        <p>
-                            Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
-                            Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                        </p>
+
+                @foreach ($noticias as $noticia)
+                    <div class="col-lg-4 col-md-6 mt-5">
+                        <div class="card card-bordered">
+                            <div class="card-body">
+                                <h5 class="title">{{ $noticia->titulo }}
+                                </h5>
+                                <p class="card-text">{{ $noticia->noticia }}</p>
+                                <a href="#" class="btn btn-primary">Go More....</a>
+                            </div>
+
+                        </div>
                     </div>
+                @endforeach
 
-                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                        <p>
-                            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram
-                            malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                        </p>
-                    </div>
-
-                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                        <p>
-                            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
-                            minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                        </p>
-                    </div>
-
-                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                        <p>
-                            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim
-                            velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum
-                            veniam.
-                        </p>
-                    </div>
-
-                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                        <p>
-                            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim
-                            culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum
-                            quid.
-                        </p>
-                    </div>
-
-                </div>
 
             </div>
         </section><!-- End Testimonials Section -->

@@ -11,8 +11,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $projetosFotos = ProjetosFotos::all();
+       // $projetosFotos = ProjetosFotos::all();
 
-        return view('welcome', compact('projetosFotos'));
+        $projetosFotos = DB::select('select * from projetos_fotos');
+        $noticias =DB::select('select * from noticias');
+        //$tirar = array("name", "{" , "}","[","]",":" , '"');
+        //$projetosFotos = array(str_replace($tirar,'',$querryDB));
+        //dd($projetosFotos);
+        //dd($noticias);
+
+        return view('welcome', compact('projetosFotos','noticias'));
     }
 }

@@ -98,7 +98,7 @@ class ProjetosFotosController extends Controller
         return view('ProjetosFotos.edit', compact('projetosFotos', 'projectId')); //o compact serve para passar o select
     }
 
-    public function update(Request $request, $projectId, $projetosFotos)
+    public function update(Request $request, $id)
     {
         //Validação do formulario projetosfotos
         request()->validate([
@@ -108,12 +108,12 @@ class ProjetosFotosController extends Controller
             'inputData' => 'required'
         ]);
 
-        //Inserção de dados no formulario projetosfotos
-        $projetosFotos->titulo = request('inputTitulo');
-        $projetosFotos->descricao = request('inputDesc');
-        $projetosFotos->localizacao = request('inputLoc');
-        $projetosFotos->data = request('inputData');
-        $projetosFotos->images = request('image');
+        $projetosFotos = ProjetosFotos::find($id);
+        $projetosFotos->titulo = $request('inputTitulo');
+        $projetosFotos->descricao = $request('inputDesc');
+        $projetosFotos->localizacao = $request('inputLoc');
+        $projetosFotos->data = $request('inputData');
+        $projetosFotos->images = $request('image');
 
         $projetosFotos->save();
 
