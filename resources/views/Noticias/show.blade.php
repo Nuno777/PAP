@@ -52,19 +52,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    @if (Session::has('message'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{ Session::get('message') }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                                style="color:#4f5962;">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-                </div>
-            </div>
+
 
             <div class="row">
                 <!-- left column -->
@@ -73,6 +61,19 @@
                     <div class="card card-primary" style="background-color: #F3F8FB">
                         <div class="card-body">
                             <h4 class="title">Lista das Notícias</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @if (Session::has('message'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ Session::get('message') }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                                            style="color:#4f5962;">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
                         <div class="single-table">
                             <div class="table-responsive">

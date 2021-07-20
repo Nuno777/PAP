@@ -40,7 +40,7 @@
         <div class="d-flex flex-column">
             <div class="profile">
                 <img src="assets/img/icon-joao.png" alt="" class="img-fluid rounded-circle">
-                <h1 class="text-light">João Almeida</a></h1>
+                <h1 class="text-light"><a href="#">João Almeida</a></h1>
                 <div class="social-links mt-3 text-center">
                     <a href="https://www.instagram.com/joao.almeida.cyclist/" target="_blank" class="instagram"><i
                             class="bx bxl-instagram"></i></a>
@@ -81,6 +81,8 @@
             </div>
         </div>
     </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="/assets/vendor/jquery/jquery.min.js"></script>

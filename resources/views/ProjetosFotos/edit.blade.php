@@ -62,7 +62,8 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" method="POST" action="{{ url('ProjetosFotos/'.$projetoFotos->id ) }}" enctype="multipart/form-data">
+                        <form role="form" method="POST" action="{{ url('ProjetosFotos/' . $projetoFotos->id) }}"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
@@ -130,7 +131,7 @@
                                     </div>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="images" name="imageFile[]"
+                                            <input type="file" class="custom-file-input" id="images" value="{{ old('images') ?? $projetosFotos->images }}" name="imageFile[]"
                                                 multiple="multiple">
                                             <label class="custom-file-label" for="images">Insira as fotos</label>
                                         </div>

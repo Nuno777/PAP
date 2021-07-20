@@ -69,7 +69,7 @@
                                 <div class="form-group">
                                     <label for="inputTitulo">Titulo do Evento</label>
                                     <input type="text" class="form-control" id="inputTitulo" name="inputTitulo"
-                                        value="{{ old('inputTitulo') }}" placeholder="Insira o titulo do evento" required>
+                                        value="{{ old('titulo') }}" placeholder="Insira o titulo do evento" required>
                                     @error('inputTitulo')
                                         <p class="text-danger">
                                             {{ $errors->first('inputTitulo') }}
@@ -79,7 +79,7 @@
                                 <div class="form-group">
                                     <label for="inputDesc">Descrição do Evento</label>
                                     <input type="text" class="form-control" id="inputDesc" name="inputDesc"
-                                        value="{{ old('inputDesc') }}" placeholder="Insira a descrição do evento"
+                                        value="{{ old('descricao') }}" placeholder="Insira a descrição do evento"
                                         required>
                                     @error('inputDesc')
                                         <p class="text-danger">
@@ -91,7 +91,7 @@
                                     <label for="inputLoc">Localização do Evento</label>
                                     <input type="text" class="form-control"
                                         onkeypress="return /[A-Za-z\s]/i.test(event.key)" id="inputLoc" name="inputLoc"
-                                        value="{{ old('inputLoc') }}" placeholder="Insira a localização do evento"
+                                        value="{{ old('localizacao') }}" placeholder="Insira a localização do evento"
                                         required>
                                     @error('inputLoc')
                                         <p class="text-danger">
@@ -102,7 +102,7 @@
                                 <div class="form-group">
                                     <label for="inputData">Data do Evento</label>
                                     <input type="date" class="form-control" id="inputData" name="inputData"
-                                        value="{{ old('inputData') }}" placeholder="Insira a data do evento" required>
+                                        value="{{ old('data') }}" placeholder="Insira a data do evento" required>
                                     @error('inputData')
                                         <p class="text-danger">
                                             {{ $errors->first('inputData') }}
@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="images" name="imageFile[]"
+                                            <input type="file" class="custom-file-input" id="images" value="{{ old('images') }}" name="imageFile[]"
                                                 multiple="multiple" required>
                                             <label class="custom-file-label" for="images">Insira as fotos</label>
                                         </div>
