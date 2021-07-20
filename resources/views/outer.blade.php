@@ -37,7 +37,6 @@
 
     <!-- ======= Header ======= -->
     <header id="header">
-
         <div class="d-flex flex-column">
             <div class="profile">
                 <img src="assets/img/icon-joao.png" alt="" class="img-fluid rounded-circle">
@@ -53,12 +52,11 @@
                         class="google-plus"><i class="bx bxl-google"></i></a>
                 </div>
             </div>
-
             <nav class="nav-menu">
                 <ul>
                     <a href="{{ 'login' }}" class="btn-get-started scrollto "><i
                             class="bx bx-log-in"></i><span>Login</span></a>
-                    <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
+                    <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Início</span></a></li>
                     <li><a href="#about"><i class="bx bx-user"></i> <span>Sobre</span></a></li>
                     <li><a href="#portfolio"><i class="bx bx-image"></i> Portfolio</a></li>
                     <!--<li><a href="#shop"><i class="bx bx-shopping-bag"></i> <span>Loja</span></a></li>-->
@@ -79,11 +77,10 @@
                 <strong>Copyright &copy; 2021</strong>
             </div>
             <div class="credits">
-                Desenvolvimento & Designed by &nbsp;&nbsp;&nbsp; Nuno Miguel
+                Development & Design by Nuno Miguel
             </div>
         </div>
     </footer><!-- End  Footer -->
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="/assets/vendor/jquery/jquery.min.js"></script>

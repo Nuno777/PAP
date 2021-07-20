@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Sign In</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/dist/img/user.png">
     <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
@@ -70,7 +70,6 @@
                                     <label class="custom-control-label" for="remember">
                                         {{ __('Stay signed in') }}
                                     </label>
-
                                 </div>
                             </div>
                         </div>
@@ -80,7 +79,7 @@
                             </button>
                         </div>
                         <div class="form-footer text-center mt-4">
-                            <p style="color: #149ddd "><a href="/">Pagina Principal</a></p>
+                            <p><a href="/" style="color: #454d55 ">Pagina Principal</a></p>
                         </div>
                     </div>
                 </form>

@@ -28,7 +28,7 @@
                         <h4 class="page-title pull-left">Administração</h4>
                         <ul class="breadcrumbs pull-left">
                             <li><a href="/home">Home</a></li>
-                            <li><span>Lista dos Eventos</span></li>
+                            <li><span>Listar Eventos</span></li>
                         </ul>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary" style="background-color: #F3F8FB">
                         <div class="card-body">
-                            <h4 class="title">Lista dos Eventos</h4>
+                            <h4 class="title">Listagem dos Eventos</h4>
                         </div>
                         <!-- Gallery -->
                         <div class="row">

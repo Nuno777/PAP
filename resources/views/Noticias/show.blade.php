@@ -28,7 +28,7 @@
                         <h4 class="page-title pull-left">Administração</h4>
                         <ul class="breadcrumbs pull-left">
                             <li><a href="/home">Home</a></li>
-                            <li><span>Lista das Notícias</span></li>
+                            <li><span>Gerir Notícias</span></li>
                         </ul>
                     </div>
                 </div>

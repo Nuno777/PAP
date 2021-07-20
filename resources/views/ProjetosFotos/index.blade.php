@@ -69,7 +69,7 @@
                                 <a href="{{ url('/ProjetosFotos/show') }}">
                                     <div class="seo-fact sbg1">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><strong>Eventos</strong></div>
+                                            <div class="seofct-icon"><strong>Listar Eventos</strong></div>
                                             <div class="seofct-icon"><i class="ti-calendar"></i></div>
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
                                 <a href="">
                                     <div class="seo-fact sbg3">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><strong>Sobre</strong></div>
+                                            <div class="seofct-icon"><strong>Editar Sobre</strong></div>
                                             <div class="seofct-icon"><i class="ti-id-badge"></i></div>
                                         </div>
                                     </div>
@@ -93,7 +93,7 @@
                                 <a href="{{ url('/Noticias/show') }}">
                                     <div class="seo-fact sbg2">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><strong>Notícias</strong></div>
+                                            <div class="seofct-icon"><strong>Gerir Notícias</strong></div>
                                             <div class="seofct-icon"><i class="ti-receipt"></i></div>
                                         </div>
                                     </div>

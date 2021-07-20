@@ -2318,7 +2318,7 @@ table.dataTable thead td {
 
 .login-form-head {
     text-align: center;
-    background: #303641 ;
+    background: #149ddd ;
     padding: 50px;
 }
 
@@ -2627,9 +2627,9 @@ table.dataTable thead td {
 .error-content h2 {
     font-size: 98px;
     font-weight: 800;
-    color: #686cdc;
+    color: #149ddd;
     margin-bottom: 28px;
-    text-shadow: -3px -3px 0 #ffffff, 3px -3px 0 #ffffff, -3px 3px 0 #ffffff, 3px 3px 0 #ffffff, 4px 4px 0 #6569dc, 5px 5px 0 #6569dc, 6px 6px 0 #6569dc, 7px 7px 0 #6569dc;
+    text-shadow: -3px -3px 0 #ffffff, 3px -3px 0 #ffffff, -3px 3px 0 #ffffff, 3px 3px 0 #ffffff, 4px 4px 0 #149ddd, 5px 5px 0 #149ddd, 6px 6px 0 #149ddd, 7px 7px 0 #149ddd;
     font-family: 'lato', sans-serif;
 }
 
@@ -2639,14 +2639,14 @@ table.dataTable thead td {
 
 .error-content p {
     font-size: 17px;
-    color: #787bd8;
+    color: #343a40;
     font-weight: 600;
 }
 
 .error-content a {
     display: inline-block;
     margin-top: 40px;
-    background: #656aea;
+    background: #149ddd;
     color: #fff;
     padding: 16px 26px;
     border-radius: 3px;

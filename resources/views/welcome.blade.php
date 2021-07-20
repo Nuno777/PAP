@@ -212,7 +212,8 @@
                                 <div class="portfolio-links">
                                     <a href="/storage/uploads/{{ $foto }}" data-gall="portfolioGallery"
                                         class="venobox" title="Foto"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio" title="Saber mais"><i class="bx bx-link"></i></a>
+                                    <a href="/portfolio/{{ $projetosFoto->id }}" title="Saber mais"><i
+                                            class="bx bx-link"></i></a>
                                 </div>
                             </div>
                         </div>

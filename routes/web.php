@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
+Route::get('/portfolio/{ProjetosFotos}', [App\Http\Controllers\HomeController::class, 'portfolio'])->name('portfolio');
 
 Auth::routes();
 

@@ -22,4 +22,13 @@ class HomeController extends Controller
 
         return view('welcome', compact('projetosFotos','noticias'));
     }
+
+    public function portfolio()
+    {
+       // $projetosFotos = ProjetosFotos::all();
+
+        $projetosFotos = DB::select('select * from projetos_fotos');
+
+        return view('portfolio',compact('projetosFotos'));
+    }
 }

@@ -82,8 +82,6 @@ class ProjetosFotosController extends Controller
         //Listagem dos projetosFotos
         $projetosFotos = ProjetosFotos::all(); //select * from projetosFotos;
         return view('ProjetosFotos.show', compact('projetosFotos')); //o compact serve para passar o select
-
-        return view('ProjetosFotos.portfolio');
     }
 
     public function edit($projectId)

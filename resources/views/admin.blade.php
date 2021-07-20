@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin Dashboard</title>
+    <title>Admin | Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="/img/png" href="/dist/img/user.png">
     <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
@@ -76,7 +76,7 @@
                         <ul class="metismenu" id="menu">
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i
-                                        class="ti-calendar"></i><span>Eventos</span></a>
+                                        class="ti-calendar"></i><span>Portfolio</span></a>
                                 <ul class="collapse">
                                     <li><a href="{{ url('/ProjetosFotos/create') }}">Novo Evento</a></li>
                                     <li><a href="{{ url('/ProjetosFotos/show') }}">Listar Eventos</a></li>
