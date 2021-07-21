@@ -1,22 +1,45 @@
-{{-- @extends('layouts.app')
+<!doctype html>
+<html class="no-js" lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/dist/img/user.png">
+    <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/css/themify-icons.css">
+    <link rel="stylesheet" href="/dist/css/metisMenu.css">
+    <link rel="stylesheet" href="/dist/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/dist/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css"
+        media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="/dist/css/typography.css">
+    <link rel="stylesheet" href="/dist/css/default-css.css">
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <link rel="stylesheet" href="/dist/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+<body>
+    <!-- login area start -->
+    <div class="login-area">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form>
+                    <div class="login-form-head">
+                        <h4>Sign Up</h4>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <input id="name" placeholder="Name" type="text"
+                                class="form-control @error('name') is-invalid @enderror" name="name"
+                                value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <div class="text-danger">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -24,13 +47,10 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
+                        <div class="form-gp">
+                            <input id="email" placeholder="Email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <div class="text-danger">
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -38,13 +58,11 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
+                        <div class="form-gp">
+                            <input id="password" placeholder="Password" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="new-password">
+                            <div class="text-danger">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -52,30 +70,46 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-gp">
+                            <input id="password-confirm" placeholder="Confirm Password" type="password" class="form-control"
+                                name="password_confirmation" required autocomplete="new-password">
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <div class="text-danger">
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ ('Register') }}
-                                </button>
-                            </div>
+                        <div class="submit-btn-area">
+                            <button type="submit" class="btn btn-primary">
+                                {{ ('Register') }}
+                            </button>
                         </div>
-                    </form>
-                </div>
+                        <div class="form-footer text-center mt-5">
+                            <p class="text-muted">Já tem conta clique<a href="/login">aqui</a></p>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
-@endsection --}}
-<!doctype html>
+    <!-- login area end -->
+
+    <!-- jquery latest version -->
+    <script src="/dist/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="/dist/js/popper.min.js"></script>
+    <script src="/dist/js/bootstrap.min.js"></script>
+    <script src="/dist/js/owl.carousel.min.js"></script>
+    <script src="/dist/js/metisMenu.min.js"></script>
+    <script src="/dist/js/jquery.slimscroll.min.js"></script>
+    <script src="/dist/js/jquery.slicknav.min.js"></script>
+
+    <!-- others plugins -->
+    <script src="/dist/js/plugins.js"></script>
+    <script src="/dist/js/scripts.js"></script>
+</body>
+
+</html>
+{{-- <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
@@ -127,4 +161,4 @@
     <script src="/dist/js/scripts.js"></script>
 </body>
 
-</html>
+</html> --}}
