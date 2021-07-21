@@ -78,7 +78,11 @@
                                 {{ __('Login') }}
                             </button>
                         </div>
-                        <div class="form-footer text-center mt-4">
+                        <br>
+                        <div class="form-footer text-center mt-2">
+                            <p><a href="/register" style="color: #149ddd ">Create Account</a></p>
+                        </div>
+                        <div class="form-footer text-center mt-2">
                             <p><a href="/" style="color: #454d55 ">Pagina Principal</a></p>
                         </div>
                     </div>
