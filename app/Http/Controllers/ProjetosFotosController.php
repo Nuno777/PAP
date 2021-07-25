@@ -153,7 +153,7 @@ class ProjetosFotosController extends Controller
         //eliminar um projeto
         ProjetosFotos::find($projetosFotos)->delete();
         //elimina a foto da pasta uploads
-        Storage::delete('public/uploads/' . $projetosFotos);
+        Storage::delete('storage/uploads/' . $projetosFotos);
 
         // $projetosFoto = json_decode($projetosFotos->projetosFoto);
         // if (($key = array_search($projetosFotos, $images)) != false) {
